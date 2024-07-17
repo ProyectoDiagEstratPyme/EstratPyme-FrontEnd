@@ -1,0 +1,57 @@
+<nav>
+    <div class="navbar">
+        <div class="logo-section">
+            <a href="https://www.eafit.edu.co/" target="_blank">
+                <img src="assets/images/logo-eafit.png" alt="Eafit logo" class="eafit-logo">
+            </a>
+        </div>
+        <div class="content-section">
+            <div class="left-section">
+                <div>Estramipyme</div>
+                <button *ngIf="isDashBoardRoute()">
+                    <span>Perfil</span>
+                    <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
+                </button>
+            </div>
+           <div class="right-section">
+                <button *ngIf="isDashBoardRoute()">
+                    <span>Cerrar Sesión</span>
+                    <img src="assets/images/log-out.png" alt="Icono log out" class="button-icon">
+                </button>
+                <button *ngIf="isLoginRoute()">
+                    <span>Registrarse</span>
+                    <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
+                </button>
+                <button *ngIf="isRegisterRoute()">
+                    <span>Iniciar Sesión</span>
+                    <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
+                </button>
+           </div> 
+        </div>
+        <!-- Code for mobile -->
+        <div class="menu">
+            <button (click)="toggleMobileMenu()">
+                <img src="assets/images/menu.png" alt="Menu" class="menu-icon">
+            </button>
+            <div class="mobile-menu" [ngClass]="{ 'active': showMobileMenu }">
+                <button *ngIf="isDashBoardRoute()">
+                    <span>Perfil</span>
+                    <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
+                </button>
+                <button *ngIf="isDashBoardRoute()">
+                    <span>Cerrar Sesión</span>
+                    <img src="assets/images/log-out.png" alt="Icono log out" class="button-icon">
+                </button>
+                <button *ngIf="isLoginRoute()">
+                    <span>Registrarse</span>
+                    <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
+                </button>
+                <button *ngIf="isRegisterRoute()">
+                    <span>Iniciar Sesión</span>
+                    <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
+                </button>
+            </div>
+        </div>  
+
+    </div>   
+</nav>
