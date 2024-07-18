@@ -1,7 +1,8 @@
-main{
+.background{
     background-image: url("../../../../public/assets/images/fondo.png");
     object-fit: cover;
     background-size: cover;
-    
+    background-color: rgb(255 255 255 / 0.2);
     background-repeat: no-repeat;
+    background-blend-mode: overlay;
 }
