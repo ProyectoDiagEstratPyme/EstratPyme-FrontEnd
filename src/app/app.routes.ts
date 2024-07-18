@@ -8,3 +8,4 @@ export const routes: Routes = [
     { path: 'register', component: RegisterComponent },
     {path: 'help-user', component: HelpUserComponent}
 ];
+
