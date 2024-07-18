@@ -1,0 +1,72 @@
+<div class="flex justify-center items-center min-h-screen">
+    <form  class="space-y-8 max-w-4xl mx-auto p-8 bg-white shadow-md rounded-lg">
+        <div>
+            <div class="shadow mb-5 mt-5">
+                <h1 class="text-2xl font-bold text-gray-800">Naturaleza del negocio</h1>
+            </div>
+            <div class="mt-6">
+                <h2 class="text-lg font-semibold text-gray-700">¿La empresa está registrada legalmente bajo algún tipo de forma jurídica específica? Por ejemplo, ¿es una sociedad, una empresa unipersonal, una cooperativa, etc.?</h2>
+                <select formControlName="naturalezaNegocio" name="forma_juridica" class="mt-2 form-select block w-full mt-1 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" required>
+                    <option value="">Seleccionar una opción</option>
+                    <option value="1">Empresa individual (natural)</option>
+                    <option value="2">Sociedad Anónima</option>
+                    <option value="3">Sociedad de Responsabilidad Limitada</option>
+                    <option value="4">Cooperativa</option>
+                </select>
+            </div>
+            <div class="mt-8">
+                <h2 class="text-lg font-semibold text-gray-700">¿Existen documentos legales que definan la estructura y el tipo de negocio?</h2>
+                <select formControlName="legalizacion" name="documentos_legales" class="mt-2 form-select block w-full mt-1 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" required>
+                    <option value="">Seleccionar una opción</option>
+                    <option value="1">Sí, existen documentos legales</option>
+                    <option value="2">No, no existen documentos legales</option>
+                </select>
+            </div>
+        </div>
+    
+        <div class="mt-8">
+            <div class="shadow mb-5 mt-5">
+                <h1 class="text-2xl font-bold text-gray-800">Tamaño del negocio</h1>
+            </div>
+            <div class="mt-6">
+                <h2 class="text-lg font-semibold text-gray-700">¿Cuántos empleados tiene la empresa?</h2>
+                <select formControlName="cantidadEmpleados" name="cantidad_empleados" class="mt-2 form-select block w-full mt-1 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" required>
+                    <option value="">Seleccionar una opción</option>
+                    <option value="1">Menos de 50 empleados</option>
+                    <option value="2">Entre 50 y 250 empleados</option>
+                    <option value="3">Más de 250 empleados</option>
+                </select>
+            </div>
+            <div class="mt-6">
+                <h2 class="text-lg font-semibold text-gray-700">¿Cuál es su volumen de ingresos anuales o activos totales?</h2>
+                <select formControlName="ingresos" name="volumen_ingresos" class="mt-2 form-select block w-full mt-1 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" required>
+                    <option value="">Seleccionar una opción</option>
+                    <option value="1">Bajos</option>
+                    <option value="2">Moderados</option>
+                    <option value="3">Altos</option>
+                </select>
+            </div>
+        </div>
+    
+        <div class="mt-8">
+            <div class="shadow mb-5 mt-5">
+                <h1 class="text-2xl font-bold text-gray-800">Sector de la empresa</h1>
+            </div>
+            <div class="mt-6">
+                <h2 class="text-lg font-semibold text-gray-700">¿En qué industria o sector opera la empresa?</h2>
+                <select formControlName="sectorCompany" name="sector_empresa" class="mt-2 form-select block w-full mt-1 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" required>
+                    <option value="">Seleccionar una opción</option>
+                    <option value="1">Tecnología y software</option>
+                    <option value="2">Salud y cuidado personal</option>
+                    <option value="3">Finanzas y seguros</option>
+                    <option value="4">Manufactura y producción</option>
+                    <option value="5">Agricultura y agroindustria</option>
+                    <option value="6">Comercio minorista y distribución</option>
+                    <option value="7">Educación y formación</option>
+                    <option value="8">Servicios profesionales (consultoría, legal, contable)</option>
+                    <option value="9">Turismo y hospitalidad</option>
+                </select>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,58 @@
+<div class="h-screen w-full grid place-items-center">
+  <section class="p-4 border rounded-lg max-w-md mx-auto">
+    <h1 class="font-bold mb-4 text-center text-xl">Register Form</h1>
+
+    <form [formGroup]="registerForm" (ngSubmit)="register()" class="space-y-4">
+      <input type="text" formControlName="name" placeholder="Nombre o Razón Social"
+        class="input text-base p-2 border border-gray-300 rounded-md w-full" required>
+      <input type="password" formControlName="password" placeholder="Contraseña"
+        class="input text-base p-2 border border-gray-300 rounded-md w-full" required>
+      <input type="email" formControlName="email" placeholder="Correo Electrónico"
+        class="input text-base p-2 border border-gray-300 rounded-md w-full" required>
+      <div>
+        <select formControlName="typeUser" class="select text-base p-2 border border-gray-300 rounded-md w-full"
+          required>
+          <option value="">Naturaleza de la empresa</option>
+          <option value="natural">Natural</option>
+          <option value="jurídica">Jurídica</option>
+        </select>
+        <p *ngIf="registerForm.get('typeUser')?.value === 'natural'">Empresas conformadas por individuos o familias,
+          generalmente de pequeño tamaño y con estructuras organizativas simples.</p>
+        <p *ngIf="registerForm.get('typeUser')?.value === 'jurídica'">Empresas constituidas como entidades legales
+          separadas de sus propietarios, con una estructura organizativa más compleja y posibilidad de crecimiento.</p>
+      </div>
+      <div>
+        <select formControlName="sizeCompany" class="select text-base p-2 border border-gray-300 rounded-md w-full" required>
+          <option value="">Tamaño de la empresa</option>
+          <option value="1">Pequeña</option>
+          <option value="2">Mediana</option>
+          <option value="3">Grande</option>
+        </select>
+        <p *ngIf="registerForm.get('sizeCompany')?.value === '1'">Empresas con un número limitado de empleados y recursos, enfocadas en mercados locales o regionales.</p>
+        <p *ngIf="registerForm.get('sizeCompany')?.value === '2'">Empresas más grandes que las pequeñas, con una estructura organizativa más desarrollada y presencia en mercados más amplios.</p>
+        <p *ngIf="registerForm.get('sizeCompany')?.value === '3'">Empresas con un gran número de empleados y recursos, con operaciones a gran escala y presencia global.</p>
+      </div>
+      <div>
+        <select formControlName="sector" class="select text-base p-2 border border-gray-300 rounded-md w-full" required>
+          <option value="">Sector al que pertenece la empresa</option>
+          <option value="1">Sector Primario</option>
+          <option value="2">Sector Secundario</option>
+          <option value="3">Sector Terciario</option>
+          <option value="4">Sector Cuaternario</option>
+        </select>
+        <p *ngIf="registerForm.get('sector')?.value === '1'">Empresas involucradas en la extracción y producción de recursos naturales, como agricultura, minería y pesca.</p>
+        <p *ngIf="registerForm.get('sector')?.value === '2'">Empresas dedicadas a la transformación de materias primas en productos manufacturados, como la industria manufacturera y la construcción.</p>
+        <p *ngIf="registerForm.get('sector')?.value === '3'">Empresas que prestan servicios a individuos y otras empresas, incluyendo sectores como comercio, transporte, educación, y servicios financieros.</p>
+        <p *ngIf="registerForm.get('sector')?.value === '4'">Empresas especializadas en la gestión y creación de conocimiento, como investigación y desarrollo, tecnología de la información y servicios de consultoría.</p>
+      </div>
+      <button type="submit"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full">Registrar</button>
+    </form>
+    <div class="mt-8">
+      <p class="text-center text-sm text-gray-600">¿No estás seguro de cómo clasificar tu empresa? <a routerLink="/help-user" class="text-blue-500 hover:text-blue-700 underline">Necesito ayuda</a></p>
+      <p class="text-center text-sm text-gray-600 mt-2">¿Ya tienes una cuenta? <a routerLink="/login" class="text-blue-500 hover:text-blue-700 underline">Inicia sesión</a></p>
+    </div>
+  </section>
+</div>
+
+
