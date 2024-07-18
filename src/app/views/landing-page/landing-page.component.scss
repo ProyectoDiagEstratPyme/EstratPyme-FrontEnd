@@ -1,0 +1,13 @@
+body {
+    background-color: #EDEFF0;
+}
+
+.image-wrapper {
+    background-image: url("../../../../public/assets/images/landingPage.png");
+    background-position: center; 
+    background-size: cover; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20%;
+}
