@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:estratPyme": "node dist/estrat-pyme/server/server.mjs"
+    "serve:ssr:estratPyme": "node dist/estrat-pyme/server/server.mjs",
+    "back": "json-server --watch ./src/app/data/db.json"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +23,7 @@
     "@angular/router": "^18.0.0",
     "@angular/ssr": "^18.0.6",
     "express": "^4.18.2",
+    "json-server": "^1.0.0-beta.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

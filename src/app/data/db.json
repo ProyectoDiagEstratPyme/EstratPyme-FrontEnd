@@ -1,0 +1,34 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "mail": "example1@example.com",
+      "password": "hashedpassword1",
+      "nombre": "John Doe",
+      "sector_empresa": "Technology",
+      "tipo_id": "1",
+      "tipo_empresa": "1",
+      "tamano": "1"
+    },
+    {
+      "id": "2",
+      "mail": "example2@example.com",
+      "password": "hashedpassword2",
+      "nombre": "Jane Smith",
+      "sector_empresa": "Healthcare",
+      "tipo_id": "2",
+      "tipo_empresa": "2",
+      "tamano": "2"
+    },
+    {
+      "id": "3",
+      "mail": "example3@example.com",
+      "password": "hashedpassword3",
+      "nombre": "Michael Johnson",
+      "sector_empresa": "Finance",
+      "tipo_id": "3",
+      "tipo_empresa": "3",
+      "tamano": "3"
+    }
+  ]
+}
