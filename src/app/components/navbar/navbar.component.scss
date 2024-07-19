@@ -41,10 +41,6 @@
     font-weight: bold;
 }
 
-nav{
-    margin: 10px;
-}
-
 button{
     display: flex;
     border: 2px solid black;
@@ -61,6 +57,10 @@ button:hover{
     transform: scale(1.03);
 }
 
+#estramipyme-logo:hover{
+    cursor: pointer;
+}
+
 span{
     margin: 0;
 }
@@ -69,6 +69,7 @@ nav{
     position: sticky;
     top: 0;
     z-index: 0;
+    margin: 10px
 }
 
 .navbar .menu .mobile-menu {
@@ -87,10 +88,7 @@ nav{
     align-items: center;
 }
 
-
-
-
-@media (max-width: 572px) {
+@media (max-width: 620px) {
 
     .navbar .content-section {
         display: none;
@@ -103,7 +101,6 @@ nav{
     .navbar{
         justify-content: space-around;
     }
-
 
     .navbar #menu button{
         background-color: white;

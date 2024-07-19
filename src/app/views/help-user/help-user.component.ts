@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { NavbarComponent } from "../../components/navbar/navbar.component";
 
 @Component({
   selector: 'app-help-user',
   standalone: true,
-  imports: [RouterOutlet,ReactiveFormsModule, CommonModule],
+  imports: [RouterOutlet, ReactiveFormsModule, CommonModule, NavbarComponent],
   templateUrl: './help-user.component.html',
   styleUrl: './help-user.component.scss'
 })

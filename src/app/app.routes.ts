@@ -10,6 +10,11 @@ export const routes: Routes = [
     { path: 'register', component: RegisterComponent },
     {path: 'help-user', component: HelpUserComponent},
     {path: 'login', component: LoginComponent},
-    {path: 'landing-page', component: LandingPageComponent}
+    {path: 'landing-page', component: LandingPageComponent},
+    {
+        path: '',
+        redirectTo: 'landing-page',
+        pathMatch: 'full'
+    }
 ];
 

@@ -7,22 +7,22 @@
         </div>
         <div class="content-section">
             <div class="left-section">
-                <div>Estramipyme</div>
+                <div id="estramipyme-logo" (click)="goLandingPage()">Estramipyme</div>
                 <button *ngIf="isDashBoardRoute()">
                     <span>Perfil</span>
                     <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
                 </button>
             </div>
            <div class="right-section">
-                <button *ngIf="isDashBoardRoute()">
+                <button *ngIf="isDashBoardRoute()" (click)="cerrarSesion()">
                     <span>Cerrar Sesión</span>
                     <img src="assets/images/log-out.png" alt="Icono log out" class="button-icon">
                 </button>
-                <button *ngIf="isLoginRoute()">
+                <button *ngIf="registrarseCondition()" (click)="registrarse()">
                     <span>Registrarse</span>
                     <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
                 </button>
-                <button *ngIf="isRegisterRoute()">
+                <button *ngIf="iniciarSesionCondition()" (click)="iniciarSesion()">
                     <span>Iniciar Sesión</span>
                     <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
                 </button>
@@ -38,15 +38,15 @@
                     <span>Perfil</span>
                     <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
                 </button>
-                <button *ngIf="isDashBoardRoute()">
+                <button *ngIf="isDashBoardRoute()" (click)="cerrarSesion()">
                     <span>Cerrar Sesión</span>
                     <img src="assets/images/log-out.png" alt="Icono log out" class="button-icon">
                 </button>
-                <button *ngIf="isLoginRoute()">
+                <button *ngIf="registrarseCondition()" (click)="registrarse()">
                     <span>Registrarse</span>
                     <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
                 </button>
-                <button *ngIf="isRegisterRoute()">
+                <button *ngIf="iniciarSesionCondition()" (click)="iniciarSesion()">
                     <span>Iniciar Sesión</span>
                     <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
                 </button>
