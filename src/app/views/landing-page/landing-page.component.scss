@@ -2,12 +2,85 @@ body {
     background-color: #EDEFF0;
 }
 
-.image-wrapper {
-    background-image: url("../../../../public/assets/images/landingPage.png");
-    background-position: center; 
-    background-size: cover; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20%;
+.objetivo {
+    color: #000066;
+    font-size: 70px;
+}
+
+.kanit-bold {
+        
+    font-family: "Kanit", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+.kanit-extralight {
+    font-family: "Kanit", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    text-align: justify;
+  }
+  
+
+.img2 {
+
+        width: 2000px; 
+        height: auto; 
+    
+}
+
+p {
+    font-family: 'Playfair Display', serif; 
+    text-align: center; 
+    font-size: 18px; 
+}
+.comenzar {
+    background-color: #000066;
+    padding: 10px 20px; 
+    border-radius: 20px; 
+    text-align: center; 
+    display: inline-block; 
+    cursor: pointer; 
+    color: white; 
+    transition: background-color 0.3s; 
+}
+
+.comenzar:hover {
+    background-color: #333399; 
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+    color: white; 
+}
+
+.text-overlay {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center; 
+}
+
+.title{
+    font-size: 50px;
+    font-family: 'Playfair Display', serif; 
+    color: #ffffff; 
+}
+
+.title2{
+    font-size: 30px;
+    font-family: 'Playfair Display', serif; 
+    color: #fbd7cb;
+}
+
+.text1{
+    font-family: 'Playfair Display', serif; 
+    text-align: center; 
+    font-size: 18px; 
+    
 }
