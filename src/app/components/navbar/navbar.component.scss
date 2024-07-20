@@ -66,10 +66,11 @@ span{
 }
 
 nav{
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
     z-index: 0;
-    margin: 10px
+    left: 0;
 }
 
 .navbar .menu .mobile-menu {
