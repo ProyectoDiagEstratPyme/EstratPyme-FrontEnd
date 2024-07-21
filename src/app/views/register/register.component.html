@@ -14,15 +14,17 @@
       <div>
         <select formControlName="typeUser" class="select text-base p-2 border border-gray-300 rounded-md w-full"
           required>
-          <option value="">Naturaleza de la empresa</option>
-          <option value="natural">Natural</option>
-          <option value="jurídica">Jurídica</option>
+          <option value="">Tipo de persona</option>
+          <option value="1">Natural</option>
+          <option value="2">Jurídica</option>
         </select>
         <p *ngIf="registerForm.get('typeUser')?.value === 'natural'">Empresas conformadas por individuos o familias,
           generalmente de pequeño tamaño y con estructuras organizativas simples.</p>
         <p *ngIf="registerForm.get('typeUser')?.value === 'jurídica'">Empresas constituidas como entidades legales
           separadas de sus propietarios, con una estructura organizativa más compleja y posibilidad de crecimiento.</p>
       </div>
+      <input type="number" formControlName="id" placeholder="Identificación"
+        class="input text-base p-2 border border-gray-300 rounded-md w-full" required>
       <div>
         <select formControlName="sizeCompany" class="select text-base p-2 border border-gray-300 rounded-md w-full" required>
           <option value="">Tamaño de la empresa</option>

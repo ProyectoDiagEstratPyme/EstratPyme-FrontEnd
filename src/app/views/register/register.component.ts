@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NavbarComponent } from "../../components/navbar/navbar.component";
+import { AuthService } from '../../services/auth.service';
+import { User } from '../../models/user';
+import { error } from 'console';
 
 
 @Component({
@@ -13,22 +16,30 @@ import { NavbarComponent } from "../../components/navbar/navbar.component";
   styleUrl: './register.component.scss',
 })
 export class RegisterComponent {
+
+  constructor(private authService: AuthService){}
+
   registerForm = new FormGroup({
     name: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', Validators.required),
     typeUser: new FormControl('', Validators.required),
+    id: new FormControl('', Validators.required),
     sizeCompany: new FormControl('', Validators.required),
     sector: new FormControl('', Validators.required)
   });
 
-  
+
   register() {
-    console.log(this.registerForm.value);
-    console.log(this.registerForm.valid);
-  
+
     if (this.registerForm.valid) {
-      alert('Formulario válido');
+      const userData = {...this.registerForm.value}
+      this.authService.registerUser(userData).subscribe(
+        response => {
+          console.log(response)
+        },
+        error => console.log(error)
+      )
     } else {
       let message = 'Formulario inválido. Por favor, revisa los siguientes campos: ';
       const errors = [];
@@ -44,16 +55,19 @@ export class RegisterComponent {
       if (!this.registerForm.get('typeUser')?.valid) {
         errors.push('tipo de usuario');
       }
+      if (!this.registerForm.get('id')?.valid) {
+        errors.push('Identificación');
+      }
       if (!this.registerForm.get('sizeCompany')?.valid) {
         errors.push('tamaño de la empresa');
       }
       if (!this.registerForm.get('sector')?.valid) {
         errors.push('sector');
       }
-  
+
       alert(`${message}${errors.join(', ')}.`);
     }
   }
 
-  
+
 }
