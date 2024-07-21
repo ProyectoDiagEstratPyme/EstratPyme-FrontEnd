@@ -1,0 +1,40 @@
+{
+  "usuarios": [
+    {
+      "id": "4782311",
+      "email": "example1@example.com",
+      "password": "hashedpassword1",
+      "name": "John Doe",
+      "sector": "1",
+      "typeUser": "1",
+      "sizeCompany": "1"
+    },
+    {
+      "id": "248762",
+      "email": "example2@example.com",
+      "password": "hashedpassword2",
+      "name": "John Wick",
+      "sector": "2",
+      "typeUser": "2",
+      "sizeCompany": "2"
+    },
+    {
+      "id": "389756",
+      "email": "example3@example.com",
+      "password": "hashedpassword3",
+      "name": "John Doe",
+      "sector": "1",
+      "typeUser": "1",
+      "sizeCompany": "1"
+    },
+    {
+      "id": 1564478,
+      "name": "diego",
+      "email": "diego@gmail.com",
+      "password": "12354",
+      "typeUser": "1",
+      "sizeCompany": "2",
+      "sector": "1"
+    }
+  ]
+}
