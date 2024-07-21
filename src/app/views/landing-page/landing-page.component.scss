@@ -1,6 +1,3 @@
-body {
-    background-color: #EDEFF0;
-}
 
 .objetivo {
     color: #000066;
@@ -8,79 +5,106 @@ body {
 }
 
 .kanit-bold {
-        
+
     font-family: "Kanit", sans-serif;
     font-weight: 700;
     font-style: normal;
-  }
+}
 
 .kanit-extralight {
     font-family: "Kanit", sans-serif;
     font-weight: 200;
     font-style: normal;
     text-align: justify;
-  }
-  
+}
+
 
 .img2 {
 
-        width: 2000px; 
-        height: auto; 
-    
+    width: 100%;
+    height: auto;
+
 }
 
 p {
-    font-family: 'Playfair Display', serif; 
-    text-align: center; 
-    font-size: 18px; 
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: 18px;
 }
-.comenzar {
+
+.btn3 {
     background-color: #000066;
-    padding: 10px 20px; 
-    border-radius: 20px; 
-    text-align: center; 
-    display: inline-block; 
-    cursor: pointer; 
-    color: white; 
-    transition: background-color 0.3s; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s;
 }
 
-.comenzar:hover {
-    background-color: #333399; 
+.btn2 {
+    background-color: #333399aa;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    transition: background-color 0.3s;
 }
 
-.relative {
-    position: relative;
+.btn {
+    background-color: #fbd7cb;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    color: #000066;
+    transition: background-color 0.3s;
+}
+.btn:hover {
+    background-color: #FD673E;
 }
 
-.absolute {
-    position: absolute;
-    color: white; 
+.btn2:hover {
+    background-color: #000066;
 }
 
-.text-overlay {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    text-align: center; 
+.btn3:hover {
+    background-color: #333399;
 }
 
-.title{
+
+.title {
     font-size: 50px;
-    font-family: 'Playfair Display', serif; 
-    color: #ffffff; 
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
 }
 
-.title2{
-    font-size: 30px;
-    font-family: 'Playfair Display', serif; 
+.title2 {
+    font-size: 40px;
+    font-family: 'Playfair Display', serif;
     color: #fbd7cb;
 }
 
-.text1{
-    font-family: 'Playfair Display', serif; 
-    text-align: center; 
-    font-size: 18px; 
-    
+.text1 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: 18px;
+
+}
+
+.image-wrapper {
+    background-image: url('../../../../public/assets/images/imgLanding/primerImg.png');
+    background-size: cover; 
+    background-position: center; 
+    height: 500px; 
+    padding: 5%;
+    border-radius: 15px;
+}
+
+.content-inner {
+    color: white;
 }
