@@ -10,12 +10,7 @@ import { catchError, map, Observable, of } from 'rxjs';
 export class AuthService {
   private baseUrl = 'http://localhost:3000/usuarios';
 
-  usuarios: User[]=[
-    {
-      email:'prueba@email.com',
-      password:'1234'
-    }
-  ]
+   isLoggedIn:boolean=false;
 
   constructor(private http: HttpClient) { }
 
@@ -44,6 +39,10 @@ export class AuthService {
 
   getUser(id: number): Observable<User> {
     return this.http.get<User>(`${this.baseUrl}/${id}`);
+  }
+
+  getLogin(){
+    return this.isLoggedIn
   }
 }
 

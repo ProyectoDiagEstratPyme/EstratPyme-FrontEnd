@@ -1,16 +1,16 @@
 <app-navbar></app-navbar>
 
 <div class="h-screen w-full grid place-items-center">
-    <section class="p-4 border rounded-lg max-w-md mx-auto">
+    <section class="p-4 border-2 border-black border-solid rounded-lg max-w-md mx-auto">
       <h1 class="font-bold mb-4 text-center text-xl">Login Form</h1>
   
       <form [formGroup]="loginForm" (ngSubmit)="login()" class="space-y-4">
         <input type="email" formControlName="email" placeholder="Correo Electrónico"
-          class="input text-base p-2 border border-gray-300 rounded-md w-full" required>
+          class="input text-base p-2 border border-black rounded-md w-full" required>
         <input type="password" formControlName="password" placeholder="Contraseña"
-          class="input text-base p-2 border border-gray-300 rounded-md w-full" required>
+          class="input text-base p-2 border border-black rounded-md w-full" required>
         <button type="submit"
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full">Iniciar sesión</button>
+          class="bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full">Iniciar sesión</button>
       </form>
       <div class="mt-8">
         <p class="text-center text-sm text-gray-600">¿No tienes una cuenta? <a routerLink="/register" class="text-blue-500 hover:text-blue-700 underline">Regístrate</a></p>

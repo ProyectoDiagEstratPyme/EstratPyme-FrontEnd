@@ -31,20 +31,25 @@ export class LoginComponent {
       const email = this.loginForm.get('email')?.value ?? '';
       const password = this.loginForm.get('password')?.value ?? '';
   
-      this.authService.login(email, password).subscribe(user => {
-        if (user) {
-          alert('Inicio de sesión exitoso');
-          this.router.navigateByUrl("/dashboard")
-        } else {
-          alert('Credenciales inválidas. Por favor, intenta nuevamente.');
+      this.authService.login(email, password).subscribe({
+        next: user => {
+          if (user) {
+            this.authService.isLoggedIn = true;
+            this.router.navigateByUrl("/dashboard");
+          } else {
+            alert('Credenciales inválidas. Por favor, intenta nuevamente.');
+          }
+        },
+        error: error => {
+          // Manejo de errores del servidor al dar respuesta
+          console.error('Error al intentar iniciar sesión:', error);
+          alert('Ocurrió un error al intentar iniciar sesión. Por favor, intenta nuevamente.');
         }
-      }, error => {
-        console.error('Error al intentar iniciar sesión:', error);
-        alert('Ocurrió un error al intentar iniciar sesión. Por favor, intenta nuevamente.');
       });
     } else {
       alert('Formulario inválido. Por favor, revisa los campos.');
     }
       
-}}
+}
+}
 
