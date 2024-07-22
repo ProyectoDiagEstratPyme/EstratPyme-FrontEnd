@@ -33,6 +33,7 @@ export class LoginComponent {
   
       this.authService.login(email, password).subscribe(user => {
         if (user) {
+          this.authService.isLoggedIn=true;
           alert('Inicio de sesión exitoso');
           this.router.navigateByUrl("/dashboard")
         } else {

@@ -17,6 +17,8 @@ export class AuthService {
     }
   ]
 
+   isLoggedIn:boolean=false;
+
   constructor(private http: HttpClient) { }
 
   registerUser(userDetails: any) {
@@ -44,6 +46,10 @@ export class AuthService {
 
   getUser(id: number): Observable<User> {
     return this.http.get<User>(`${this.baseUrl}/${id}`);
+  }
+
+  getLogin(){
+    return this.isLoggedIn
   }
 }
 
