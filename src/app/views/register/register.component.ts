@@ -34,12 +34,12 @@ export class RegisterComponent {
 
     if (this.registerForm.valid) {
       const userData = {...this.registerForm.value}
-      this.authService.registerUser(userData).subscribe(
-        response => {
+      this.authService.registerUser(userData).subscribe({
+       next: response => {
           console.log(response)
         },
-        error => console.log(error)
-      )
+        error:error => console.log(error)
+    });
     } else {
       let message = 'Formulario inválido. Por favor, revisa los siguientes campos: ';
       const errors = [];
