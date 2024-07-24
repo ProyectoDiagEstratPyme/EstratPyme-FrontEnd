@@ -13,7 +13,7 @@ El proyecto desarrolla una plataforma web para que individuos y empresas realice
 
 ![HTML](https://img.shields.io/badge/HTML-5-orange?style=for-the-badge&logo=html5)
 ![CSS](https://img.shields.io/badge/CSS-3-blue?style=for-the-badge&logo=css3)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-2.x-38B2AC?style=for-the-badge&logo=tailwind-css)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.6-38B2AC?style=for-the-badge&logo=tailwind-css)
 ![Angular](https://img.shields.io/badge/Angular-18-red?style=for-the-badge&logo=angular)
 ![JSON Server](https://img.shields.io/badge/JSON_Server-latest-green?style=for-the-badge&logo=json)
 ![npm](https://img.shields.io/badge/npm-v10.8.0-red?style=for-the-badge&logo=npm)
