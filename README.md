@@ -1,27 +1,32 @@
-# EstratPyme
+## Descripcion:
+El proyecto desarrolla una plataforma web para que individuos y empresas realicen pruebas diagnósticas basadas en el libro "EstraMyPyme" de la universidad EAFIT, incluyendo registro de usuarios, inicio de sesion usando credenciales, pruebas diagnosticas, formularios para clasificar y obtener informacion de la empresa ademas cuenta con un panel de administración para visualizar resultados y gráficas, facilitando el proceso tanto para los clientes(empresas) como para los administradores e internos de la universidad.
+#### El sistema permite:
+- Registrar empresas y almacenar la informacion suministrada por estas.
+- Iniciar sesion con credenciales tanto como empresa y como administrador.
+- Autenticar y verificar los datos desde el momento de registrarse y ingresar datos, hasta el momento de acceder a la plataforma
+- Visualizar por medio de graficas informacion de las empresas que se encuentran registradas y sobre sus pruebas.
+- Transmitirle al usuario una descripcion sobre la metodologia por medio de la landing page y permitirle acceso a los recursos como el libro.
+- Realizar pruebas diagnosticas.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
+## Tecnologías Utilizadas:
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![HTML](https://img.shields.io/badge/HTML-5-orange?style=for-the-badge&logo=html5)
+![CSS](https://img.shields.io/badge/CSS-3-blue?style=for-the-badge&logo=css3)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-2.x-38B2AC?style=for-the-badge&logo=tailwind-css)
+![Angular](https://img.shields.io/badge/Angular-18-red?style=for-the-badge&logo=angular)
+![JSON Server](https://img.shields.io/badge/JSON_Server-latest-green?style=for-the-badge&logo=json)
+![npm](https://img.shields.io/badge/npm-v10.8.0-red?style=for-the-badge&logo=npm)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+# Instalación y Uso
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Contacto
 
-## Further help
+Si tienes preguntas, comentarios o sugerencias sobre este proyecto, no dudes en ponerte en contacto Con nosotros los desarrolladores.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
