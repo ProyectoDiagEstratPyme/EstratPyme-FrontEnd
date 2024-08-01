@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +13,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent {
   showMobileMenu: boolean = false;
 
-  constructor(private router: Router){
+  constructor(private router: Router,private authService: AuthService){
 
   }
   toggleMobileMenu(): void {
@@ -48,8 +49,7 @@ export class NavbarComponent {
   }
 
   cerrarSesion():void{
-    /* falta agregar logica para indicar a la pagina
-    que ya fue deslogueado */
+    this.authService.isLoggedIn=false;
 
     this.router.navigateByUrl('/login');
   }
@@ -64,6 +64,10 @@ export class NavbarComponent {
 
   goLandingPage():void{
     this.router.navigateByUrl("/landing-page")
+  }
+
+  goInicioDashboard():void{
+    this.router.navigateByUrl("/dashboard")
   }
 
 
