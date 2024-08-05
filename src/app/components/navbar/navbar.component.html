@@ -1,4 +1,23 @@
 <nav>
+
+    <div class="navbar">
+        <div id="estramipyme-logo" (click)="goLandingPage()">
+            <img src="assets/images/estramipyme-logo.png" alt="Estramipyme logo" class="estramipyme-logo">
+            <span>Estramipyme</span>
+        </div>
+        <div class="content-section">
+            <div class="left-section">
+                <div class="logo-section">
+                    <a href="https://www.eafit.edu.co/" target="_blank">
+                        <img src="assets/images/logo-eafit.png" alt="Eafit logo" class="eafit-logo">
+                    </a>
+                </div>
+                <button *ngIf="isDashBoardRoute()" (click)="goInicioDashboard()">
+                    <span>Inicio</span>
+                    <img src="assets/images/home.png" alt="Icono perfil" class="button-icon">
+                </button>
+                <button *ngIf="isDashBoardRoute()">
+
     <div class="navbar shadow-lg">
         <div class="logo-section">
             <a href="https://www.eafit.edu.co/" target="_blank">
@@ -36,6 +55,13 @@
                 <img src="assets/images/menu.png" alt="Menu" class="menu-icon">
             </button>
             <div class="mobile-menu" [ngClass]="{ 'active': showMobileMenu }">
+
+                <button *ngIf="isDashBoardRoute()" (click)="goInicioDashboard()">
+                    <span>Inicio</span>
+                    <img src="assets/images/home.png" alt="Icono perfil" class="button-icon">
+                </button>
+                <button *ngIf="isDashBoardRoute()">
+
                 <button *ngIf="isDashBoardRoute()" class="rounded border border-gray-300">
                     <span>Perfil</span>
                     <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
