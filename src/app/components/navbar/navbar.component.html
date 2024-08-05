@@ -8,47 +8,47 @@
         <div class="content-section">
             <div class="left-section">
                 <div id="estramipyme-logo" (click)="goLandingPage()">Estramipyme</div>
-                <button *ngIf="isDashBoardRoute()">
+                <button *ngIf="isDashBoardRoute()" class="rounded border border-gray-300">
                     <span>Perfil</span>
                     <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
                 </button>
             </div>
            <div class="right-section">
-                <button *ngIf="isDashBoardRoute()" (click)="cerrarSesion()">
+                <button *ngIf="isDashBoardRoute()" (click)="cerrarSesion()" class="rounded border border-gray-300">
                     <span>Cerrar Sesión</span>
                     <img src="assets/images/log-out.png" alt="Icono log out" class="button-icon">
                 </button>
-                <button *ngIf="registrarseCondition()" (click)="registrarse()">
+                <button *ngIf="registrarseCondition()" (click)="registrarse()" class="rounded border border-gray-300">
                     <span>Registrarse</span>
                     <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
                 </button>
-                <button *ngIf="iniciarSesionCondition()" (click)="iniciarSesion()">
+                <button *ngIf="iniciarSesionCondition()" (click)="iniciarSesion()" class="rounded border border-gray-300">
                     <span>Iniciar Sesión</span>
                     <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
                 </button>
                 
-                <app-setting>HOLA</app-setting>
+                <app-setting>Setting</app-setting>
            </div> 
         </div>
         <!-- Code for mobile -->
         <div class="menu">
-            <button (click)="toggleMobileMenu()">
+            <button (click)="toggleMobileMenu()" class="rounded border border-gray-300">
                 <img src="assets/images/menu.png" alt="Menu" class="menu-icon">
             </button>
             <div class="mobile-menu" [ngClass]="{ 'active': showMobileMenu }">
-                <button *ngIf="isDashBoardRoute()">
+                <button *ngIf="isDashBoardRoute()" class="rounded border border-gray-300">
                     <span>Perfil</span>
                     <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
                 </button>
-                <button *ngIf="isDashBoardRoute()" (click)="cerrarSesion()">
+                <button *ngIf="isDashBoardRoute()" (click)="cerrarSesion()" class="rounded border border-gray-300">
                     <span>Cerrar Sesión</span>
                     <img src="assets/images/log-out.png" alt="Icono log out" class="button-icon">
                 </button>
-                <button *ngIf="registrarseCondition()" (click)="registrarse()">
+                <button *ngIf="registrarseCondition()" (click)="registrarse()" class="rounded border border-gray-300">
                     <span>Registrarse</span>
                     <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
                 </button>
-                <button *ngIf="iniciarSesionCondition()" (click)="iniciarSesion()">
+                <button *ngIf="iniciarSesionCondition()" (click)="iniciarSesion()" class="rounded border border-gray-300">
                     <span>Iniciar Sesión</span>
                     <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
                 </button>
@@ -57,3 +57,5 @@
 
     </div>   
 </nav>
+
+
