@@ -2,11 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { SettingComponent } from '../setting/setting.component';
+
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,SettingComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
@@ -39,6 +41,7 @@ export class NavbarComponent {
   isLandingPageRoute():boolean{
     return this.router.url === "/landing-page"
   }
+
 
   registrarseCondition():boolean{
     return this.isLoginRoute() || this.isLandingPageRoute() || this.isHelpUserRoute()

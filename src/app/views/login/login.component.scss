@@ -1,0 +1,32 @@
+.main-container {
+    background-color: #b11414c2;
+  }
+  
+  .is-invalid {
+    border-color: red;
+  }
+  
+  .is-valid {
+    border-color: green;
+  }
+  
+  .text1 {
+    color: #000066;
+  }
+  
+  button {
+    background-color: black;
+    color: white;
+    font-weight: bold; 
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    width: 100%; 
+
+    transition: background-color 0.3s, color 0.3s;
+  
+    &:hover {
+      background-color: white;
+      color: black;
+      border: 2px solid black;
+    }
+  }
