@@ -1,6 +1,5 @@
 <nav>
-
-    <div class="navbar">
+    <div class="navbar shadow-lg">
         <div id="estramipyme-logo" (click)="goLandingPage()">
             <img src="assets/images/estramipyme-logo.png" alt="Estramipyme logo" class="estramipyme-logo">
             <span>Estramipyme</span>
@@ -16,23 +15,12 @@
                     <span>Inicio</span>
                     <img src="assets/images/home.png" alt="Icono perfil" class="button-icon">
                 </button>
-                <button *ngIf="isDashBoardRoute()">
-
-    <div class="navbar shadow-lg">
-        <div class="logo-section">
-            <a href="https://www.eafit.edu.co/" target="_blank">
-                <img src="assets/images/logo-eafit.png" alt="Eafit logo" class="eafit-logo">
-            </a>
-        </div>
-        <div class="content-section">
-            <div class="left-section">
-                <div id="estramipyme-logo" (click)="goLandingPage()">Estramipyme</div>
                 <button *ngIf="isDashBoardRoute()" class="rounded border border-gray-300">
                     <span>Perfil</span>
                     <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
                 </button>
             </div>
-           <div class="right-section">
+            <div class="right-section">
                 <button *ngIf="isDashBoardRoute()" (click)="cerrarSesion()" class="rounded border border-gray-300">
                     <span>Cerrar Sesión</span>
                     <img src="assets/images/log-out.png" alt="Icono log out" class="button-icon">
@@ -45,9 +33,8 @@
                     <span>Iniciar Sesión</span>
                     <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
                 </button>
-                
                 <app-setting>Setting</app-setting>
-           </div> 
+            </div>
         </div>
         <!-- Code for mobile -->
         <div class="menu">
@@ -55,13 +42,10 @@
                 <img src="assets/images/menu.png" alt="Menu" class="menu-icon">
             </button>
             <div class="mobile-menu" [ngClass]="{ 'active': showMobileMenu }">
-
                 <button *ngIf="isDashBoardRoute()" (click)="goInicioDashboard()">
                     <span>Inicio</span>
                     <img src="assets/images/home.png" alt="Icono perfil" class="button-icon">
                 </button>
-                <button *ngIf="isDashBoardRoute()">
-
                 <button *ngIf="isDashBoardRoute()" class="rounded border border-gray-300">
                     <span>Perfil</span>
                     <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
@@ -79,9 +63,6 @@
                     <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
                 </button>
             </div>
-        </div>  
-
-    </div>   
+        </div>
+    </div>
 </nav>
-
-
