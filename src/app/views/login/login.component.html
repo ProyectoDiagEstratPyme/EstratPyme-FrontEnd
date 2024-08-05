@@ -1,20 +1,48 @@
-<app-navbar></app-navbar>
-
-<div class="h-screen w-full grid place-items-center">
-    <section class="p-4 border-2 border-black border-solid rounded-lg max-w-md mx-auto">
-      <h1 class="font-bold mb-4 text-center text-xl">Login Form</h1>
-  
-      <form [formGroup]="loginForm" (ngSubmit)="login()" class="space-y-4">
-        <input type="email" formControlName="email" placeholder="Correo Electrónico"
-          class="input text-base p-2 border border-black rounded-md w-full" required>
-        <input type="password" formControlName="password" placeholder="Contraseña"
-          class="input text-base p-2 border border-black rounded-md w-full" required>
-        <button type="submit"
-          class="bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full">Iniciar sesión</button>
-      </form>
-      <div class="mt-8">
-        <p class="text-center text-sm text-gray-600">¿No tienes una cuenta? <a routerLink="/register" class="text-blue-500 hover:text-blue-700 underline">Regístrate</a></p>
-        <p class="text-center text-sm text-gray-600 mt-2">¿Olvidaste tu contraseña? <a routerLink="/forgot-password" class="text-blue-500 hover:text-blue-700 underline">Recupérala aquí</a></p>
+<div class="min-h-screen flex items-center justify-center">
+  <app-navbar></app-navbar>
+  <div class="container mx-auto">
+    <div class="flex justify-center items-center min-h-screen">
+      <div class="w-full max-w-4xl">
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+          <div class="flex">
+            <div class="hidden md:block md:w-1/2">
+              <img src="assets/images/imgLogin/primerImg.png" alt="login form" class="w-full h-full object-cover" />
+            </div>
+            <div class="w-full md:w-1/2 flex items-center">
+              <div class="p-8 text-black w-full">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                  <div id="error-message" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert" style="display:none;">
+                    Ocurrió un error al intentar iniciar sesión. Por favor, intenta nuevamente.
+                  </div>
+                  <div class="flex items-center mb-6">
+                    <i class="fas fa-cubes fa-2x mr-3 text-orange-600"></i>
+                    <span class="text-2xl font-bold text1">¡Bienvenidos a EstramyPyme!</span>
+                  </div>
+                  <h5 class="text-lg font-normal mb-6 tracking-wide">Iniciar sesión en su cuenta</h5>
+                  <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+                    <input type="email" formControlName="email" id="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" [ngClass]="{'is-invalid': loginForm.get('email')?.invalid && loginForm.get('email')?.touched, 'is-valid': loginForm.get('email')?.valid && loginForm.get('email')?.touched}" />
+                  </div>
+                  <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Password</label>
+                    <input type="password" formControlName="password" id="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" [ngClass]="{'is-invalid': loginForm.get('password')?.invalid && loginForm.get('password')?.touched, 'is-valid': loginForm.get('password')?.valid && loginForm.get('password')?.touched}" />
+                  </div>
+                  <div *ngIf="errorMessage" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+                    {{ errorMessage }}
+                  </div>
+                  <div class="mb-4">
+                    <button class="bg-black text-white font-bold py-2 px-4 rounded w-full hover:bg-gray-700" type="submit">Login</button>
+                  </div>
+                  <div class="text-center">
+                    <p class="mt-6 text-gray-600">Don't have an account?</p>
+                    <a routerLink="/register" class="text-blue-600 hover:text-blue-800">Register here</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   </div>
+</div>
