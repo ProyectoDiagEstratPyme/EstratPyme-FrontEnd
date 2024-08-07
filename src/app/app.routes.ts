@@ -6,10 +6,12 @@ import { LoginComponent } from './views/login/login.component';
 import { LandingPageComponent } from './views/landing-page/landing-page.component';
 import { CanActivateUser } from './guards/auth.guard';
 import { SettingComponent } from './components/setting/setting.component';
+import { DashboardAdminComponent } from './views/dashboard-admin/dashboard-admin.component';
 
 
 export const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent, canActivate: [CanActivateUser] },
+    { path: 'dashboard-admin', component: DashboardAdminComponent },
     { path: 'register', component: RegisterComponent },
     {path: 'help-user', component: HelpUserComponent},
     {path: 'login', component: LoginComponent},
