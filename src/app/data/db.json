@@ -1,4 +1,18 @@
 {
+  "students": [
+    {
+      "id": "107895",
+      "email": "juan.p@email.com",
+      "name": "Juan Perez",
+      "haceParteProyecto": true
+    },
+    {
+      "id": "2734526",
+      "email": "maria.l@email.com",
+      "name": "Maria Lopez",
+      "haceParteProyecto": true
+    }
+  ],
   "usuarios": [
     {
       "id": "21-575-2179",
