@@ -13,6 +13,23 @@
       "haceParteProyecto": true
     }
   ],
+
+  "teachers": [
+    {
+      "id": "9684624",
+      "email": "ruben.z@email.com",
+      "name": "Ruben Zuluaga",
+      "profesorParteProyecto": false
+
+    },
+    {
+      "id": "2711345",
+      "email": "Andrea.r@email.com",
+      "name": "Andrea Rios",
+      "profesorParteProyecto": false
+
+    }
+  ],
   "usuarios": [
     {
       "id": "21-575-2179",
