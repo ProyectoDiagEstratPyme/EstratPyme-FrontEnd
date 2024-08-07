@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import Chart from 'chart.js/auto'
+import { AddStudentButtonComponent } from "../../components/add-student-button/add-student-button.component";
+import { AddTeacherButtonComponent } from "../../components/add-teacher-button/add-teacher-button.component";
 
 @Component({
   selector: 'app-dashboard-admin',
   standalone: true,
-  imports: [],
+  imports: [AddStudentButtonComponent, AddTeacherButtonComponent],
   templateUrl: './dashboard-admin.component.html',
   styleUrl: './dashboard-admin.component.scss'
 })
