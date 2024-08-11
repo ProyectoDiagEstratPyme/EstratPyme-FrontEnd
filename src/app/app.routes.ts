@@ -11,7 +11,7 @@ import { DashboardAdminComponent } from './views/dashboard-admin/dashboard-admin
 
 export const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent, canActivate: [CanActivateUser] },
-    { path: 'dashboard-admin', component: DashboardAdminComponent },
+    { path: 'dashboard-admin', component: DashboardAdminComponent ,canActivate: [CanActivateUser]},
     { path: 'register', component: RegisterComponent },
     {path: 'help-user', component: HelpUserComponent},
     {path: 'login', component: LoginComponent},

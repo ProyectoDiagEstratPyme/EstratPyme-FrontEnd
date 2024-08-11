@@ -6,4 +6,6 @@ export interface User {
     id?: string | null | undefined;
     sizeCompany?: string | undefined;
     sector?: string | undefined;
+    registerDate?:string| undefined;
+    isBookDonwloaded?:boolean;
 }

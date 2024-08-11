@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { catchError, map, Observable, of } from 'rxjs';
+import { Admin } from '../models/admin';
 
 
 @Injectable({
@@ -9,8 +10,9 @@ import { catchError, map, Observable, of } from 'rxjs';
 })
 export class AuthService {
   private baseUrl = 'http://localhost:3000/usuarios';
+  private baseUrlAdmin= "http://localhost:3000/admins"
 
-   isLoggedIn:boolean=false;
+  isLoggedIn:boolean=false;
 
   constructor(private http: HttpClient) { }
 
@@ -34,6 +36,25 @@ export class AuthService {
         }
       }),
       catchError(() => of(null))
+    );
+  }
+
+  loginAdmin(email:string,password:string): Observable<User|null>{
+    return this.http.get<Admin[]>(`${this.baseUrlAdmin}?email=${email}`).pipe(
+      map(admins => {
+        if (admins.length > 0){
+          const admin = admins[0];
+
+          if(password===admin.password){
+            return admin;
+          }else{
+            return null;
+          }
+        }else{
+          return null;
+        }
+      }),
+      catchError(()=> of(null))
     );
   }
 

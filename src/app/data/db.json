@@ -1,4 +1,17 @@
 {
+  "admins":[
+    {
+      "id":"1",
+      "email":"profesora1@gmail.com",
+      "password":"admin123"
+    },
+    {
+      "id":"2",
+      "email":"profesora2@gmail.com",
+      "password":"admin123"
+    }
+  ],
+
   "students": [
     {
       "id": "107895",
