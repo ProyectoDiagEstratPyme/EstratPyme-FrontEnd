@@ -15,7 +15,7 @@
                     <span>Inicio</span>
                     <img src="assets/images/home.png" alt="Icono perfil" class="button-icon">
                 </button>
-                <button *ngIf="isDashBoardRoute()" class="rounded border border-gray-300">
+                <button *ngIf="isDashBoardRoute()" (click)="goPerfilUser()" class="rounded border border-gray-300">
                     <span>Perfil</span>
                     <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
                 </button>
@@ -42,11 +42,11 @@
                 <img src="assets/images/menu.png" alt="Menu" class="menu-icon">
             </button>
             <div class="mobile-menu" [ngClass]="{ 'active': showMobileMenu }">
-                <button *ngIf="isDashBoardRoute()" (click)="goInicioDashboard()">
+                <button *ngIf="isDashBoardRoute()" (click)="goInicioDashboardMobile()">
                     <span>Inicio</span>
                     <img src="assets/images/home.png" alt="Icono perfil" class="button-icon">
                 </button>
-                <button *ngIf="isDashBoardRoute()" class="rounded border border-gray-300">
+                <button *ngIf="isDashBoardRoute()" (click)="goPerfilUserMobile()" class="rounded border border-gray-300">
                     <span>Perfil</span>
                     <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
                 </button>

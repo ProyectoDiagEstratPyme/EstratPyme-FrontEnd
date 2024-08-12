@@ -1,0 +1,41 @@
+<button (click)="goHome()">
+    <img src="assets/images/return.png" alt="Icono volver" class="button-icon">
+    <span>Volver</span>
+</button>
+<div class="profile-card">
+    <div class="card-border">
+        <p class="title">Perfil</p>
+        <img src="assets/images/company.png" alt="Imagen empresa ">
+
+        <form>
+            <div>
+            
+            <label for="name" class="title">Empresa:</label>
+            <input type="text" id="name" value={{user?.name}} disabled>
+
+            <label for="email" class="title">Correo Electrónico:</label>
+            <input type="email" id="email" value={{user?.email}} disabled>
+
+            <label for="typeUser" class="title">Tipo de Persona:</label>
+            <input type="text" id="typeUser" value={{user_type}} disabled>
+
+            <label for="sizeCompany" class="title">Tamaño de la Empresa:</label>
+            <input type="text" id="sizeCompany" value={{user_size_company}} disabled>
+
+            <label for="sector" class="title">Sector:</label>
+            <input type="text" id="sector" value={{user_sector}} disabled>
+
+            <label for="registerDate" class="title">Fecha de Registro:</label>
+            <input type="month" id="registerDate" value={{user?.registerDate}} disabled>
+
+            <label for="isBookDownloaded" class="title">¿Descargó el libro?</label>
+            <input type="text" id="isBookDownloaded" value={{user_book}} disabled>
+            
+
+        </div>
+        </form>
+    </div>
+   
+</div>
+
+

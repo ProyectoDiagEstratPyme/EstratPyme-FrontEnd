@@ -45,6 +45,12 @@
   ],
   "usuarios": [
     {
+      "name":"usuario-prueba",
+      "email":"hola@gmail.com",
+      "password":"123"
+
+    },
+    {
       "id": "21-575-2179",
       "name": "Pixonyx",
       "email": "sfurtado0@salon.com",
