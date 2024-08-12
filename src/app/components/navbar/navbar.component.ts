@@ -31,7 +31,7 @@ export class NavbarComponent {
   }
 
   isDashBoardRoute():boolean{
-    return this.router.url === "/dashboard"
+    return this.router.url === "/dashboard" || this.router.url === "/dashboard/profile" 
   }
 
   isHelpUserRoute():boolean{
@@ -56,7 +56,7 @@ export class NavbarComponent {
 
     this.router.navigateByUrl('/login');
   }
-
+  
   registrarse():void{
     this.router.navigateByUrl('/register');
   }
@@ -71,6 +71,19 @@ export class NavbarComponent {
 
   goInicioDashboard():void{
     this.router.navigateByUrl("/dashboard")
+  }
+  goInicioDashboardMobile():void{
+    this.router.navigateByUrl("/dashboard")
+    this.toggleMobileMenu()
+  }
+
+  goPerfilUser():void{
+    this.router.navigateByUrl("/dashboard/profile")
+  }
+
+  goPerfilUserMobile():void{
+    this.router.navigateByUrl("/dashboard/profile")
+    this.toggleMobileMenu()
   }
 
 
