@@ -1,62 +1,119 @@
-<app-navbar></app-navbar>
+<div class="min-h-screen flex items-center justify-center">
+  <app-navbar class="navbar"></app-navbar>
 
-<div class="h-screen w-full grid place-items-center">
-  <section class="p-4 border-2 border-black border-solid rounded-lg max-w-md mx-auto">
-    <h1 class="font-bold mb-4 text-center text-xl">Register Form</h1>
-
-    <form [formGroup]="registerForm" (ngSubmit)="register()" class="space-y-4">
-      <input type="text" formControlName="name" placeholder="Nombre o Razón Social"
-        class="input text-base p-2 border border-black rounded-md w-full" required>
-      <input type="password" formControlName="password" placeholder="Contraseña"
-        class="input text-base p-2 border border-black rounded-md w-full" required>
-      <input type="email" formControlName="email" placeholder="Correo Electrónico"
-        class="input text-base p-2 border border-black rounded-md w-full" required>
-      <div>
-        <select formControlName="typeUser" class="select text-base p-2 border border-gray-300 rounded-md w-full"
-          required>
-          <option value="">Tipo de persona</option>
-          <option value="1">Natural</option>
-          <option value="2">Jurídica</option>
-        </select>
-        <p *ngIf="registerForm.get('typeUser')?.value === 'natural'">Empresas conformadas por individuos o familias,
-          generalmente de pequeño tamaño y con estructuras organizativas simples.</p>
-        <p *ngIf="registerForm.get('typeUser')?.value === 'jurídica'">Empresas constituidas como entidades legales
-          separadas de sus propietarios, con una estructura organizativa más compleja y posibilidad de crecimiento.</p>
+  <div class="container mx-auto mt-7" style="padding-top: 60px;"> <!-- Adjust padding-top as needed -->
+    <div class="flex justify-center items-center min-h-screen">
+      <div class="w-full max-w-4xl">
+        <div class="bg-white shadow-2xl rounded-lg overflow-hidden">
+          <div class="flex">
+            <div class="hidden md:block md:w-1/2">
+              <img src="assets/images/imgRegister/primerImg.png" alt="register form" class="w-full h-full object-cover" />
+            </div>
+            <div class="w-full md:w-1/2 flex items-center">
+              <div class="p-8 text-black w-full form-container">
+                <div class="main-container">
+                  <div id="error-message" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert" style="display:none;">
+                  </div>
+                  <h1 class="font-bold pt-4 text-center text-xl">Regístrate a EstramyPyme!</h1>
+                  
+                  <form [formGroup]="registerForm" (ngSubmit)="register()" class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+                    <div class="mb-2">
+                      <label for="name" class="block text-white">Nombre o Razón Social</label>
+                      <input id="name" type="text" formControlName="name"
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" [ngClass]="{'is-invalid': registerForm.get('name')?.invalid && registerForm.get('name')?.touched, 'is-valid': registerForm.get('name')?.valid && registerForm.get('name')?.touched}" required>
+                    </div>
+                    <div class="mb-2">
+                      <label for="password" class="block text-white">Contraseña</label>
+                      <input id="password" type="password" formControlName="password"
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" [ngClass]="{'is-invalid': registerForm.get('password')?.invalid && registerForm.get('password')?.touched, 'is-valid': registerForm.get('password')?.valid && registerForm.get('password')?.touched}" required>
+                    </div>
+                    <div class="mb-2">
+                      <label for="email" class="block text-white">Correo Electrónico</label>
+                      <input id="email" type="email" formControlName="email"
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" [ngClass]="{'is-invalid': registerForm.get('email')?.invalid && registerForm.get('email')?.touched, 'is-valid': registerForm.get('email')?.valid && registerForm.get('email')?.touched}" required>
+                    </div>
+                    <!-- Other form fields -->
+                    <div class="mb-2">
+                      <label for="typeUser" class="block text-white">Tipo de persona</label>
+                      <select id="typeUser" formControlName="typeUser" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                        <option value="0">Seleccione</option>
+                        <option value="1">Natural</option>
+                        <option value="2">Jurídica</option>
+                      </select>
+                      <p *ngIf="registerForm.get('typeUser')?.value === '1'">Empresas conformadas por individuos o familias, generalmente de pequeño tamaño y con estructuras organizativas simples.</p>
+                      <p *ngIf="registerForm.get('typeUser')?.value === '2'">Empresas constituidas como entidades legales separadas de sus propietarios, con una estructura organizativa más compleja y posibilidad de crecimiento.</p>
+                    </div>
+                    <div class="mb-2">
+                      <label for="id" class="block text-white">Identificación</label>
+                      <input id="id" type="number" formControlName="id"
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" [ngClass]="{'is-invalid': registerForm.get('id')?.invalid && registerForm.get('id')?.touched, 'is-valid': registerForm.get('id')?.valid && registerForm.get('id')?.touched}" required>
+                    </div>
+                    <div class="mb-2">
+                      <label for="sizeCompany" class="block text-white">Tamaño de la empresa</label>
+                      <select id="sizeCompany" (change)="openModal()" formControlName="sizeCompany" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                        <option value="0">Seleccione</option>
+                        <option value="1">Pequeña</option>
+                        <option value="2">Mediana</option>
+                        <option value="3">Grande</option>
+                      </select>
+                      <p *ngIf="registerForm.get('sizeCompany')?.value === '1'">Empresas con un número limitado de empleados y recursos, enfocadas en mercados locales o regionales.</p>
+                      <p *ngIf="registerForm.get('sizeCompany')?.value === '2'">Empresas más grandes que las pequeñas, con una estructura organizativa más desarrollada y presencia en mercados más amplios.</p>
+                      <p *ngIf="registerForm.get('sizeCompany')?.value === '3'">Empresas con un gran número de empleados y recursos, con operaciones a gran escala y presencia global.</p>
+                    </div>
+                    <div class="mb-4 col-span-2">
+                      <label for="sector" class="block text-white">Sector al que pertenece la empresa</label>
+                      <select id="sector" formControlName="sector" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                        <option value="0">Seleccione</option>
+                        <option value="1">Sector Primario</option>
+                        <option value="2">Sector Secundario</option>
+                        <option value="3">Sector Terciario</option>
+                        <option value="4">Sector Cuaternario</option>
+                      </select>
+                      <p *ngIf="registerForm.get('sector')?.value === '1'">Empresas involucradas en la extracción y producción de recursos naturales, como agricultura, minería y pesca.</p>
+                      <p *ngIf="registerForm.get('sector')?.value === '2'">Empresas dedicadas a la transformación de materias primas en productos manufacturados, como la industria manufacturera y la construcción.</p>
+                      <p *ngIf="registerForm.get('sector')?.value === '3'">Empresas que prestan servicios a individuos y otras empresas, incluyendo sectores como comercio, transporte, educación, y servicios financieros.</p>
+                      <p *ngIf="registerForm.get('sector')?.value === '4'">Empresas especializadas en la gestión y creación de conocimiento, como investigación y desarrollo, tecnología de la información y servicios de consultoría.</p>
+                    </div>
+                    <div class=" col-span-2">
+                      <button type="submit"
+                        class="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 rounded w-full">Registrar</button>
+                    </div>
+                  </form>
+                  <div class="pb-5">
+                    <p class="text-center text-sm text-gray-600">¿No estás seguro de cómo clasificar tu empresa? <a routerLink="/help-user" class="custom-link">Necesito ayuda</a></p>
+                    <p class="text-center text-sm text-gray-600 mt-2">¿Ya tienes una cuenta? <a routerLink="/login" class="custom-link">Inicia sesión</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <input type="number" formControlName="id" placeholder="Identificación"
-        class="input text-base p-2 border border-black rounded-md w-full" required>
-      <div>
-        <select formControlName="sizeCompany" class="select text-base p-2 border border-gray-300 rounded-md w-full" required>
-          <option value="">Tamaño de la empresa</option>
-          <option value="1">Pequeña</option>
-          <option value="2">Mediana</option>
-          <option value="3">Grande</option>
-        </select>
-        <p *ngIf="registerForm.get('sizeCompany')?.value === '1'">Empresas con un número limitado de empleados y recursos, enfocadas en mercados locales o regionales.</p>
-        <p *ngIf="registerForm.get('sizeCompany')?.value === '2'">Empresas más grandes que las pequeñas, con una estructura organizativa más desarrollada y presencia en mercados más amplios.</p>
-        <p *ngIf="registerForm.get('sizeCompany')?.value === '3'">Empresas con un gran número de empleados y recursos, con operaciones a gran escala y presencia global.</p>
-      </div>
-      <div>
-        <select formControlName="sector" class="select text-base p-2 border border-gray-300 rounded-md w-full" required>
-          <option value="">Sector al que pertenece la empresa</option>
-          <option value="1">Sector Primario</option>
-          <option value="2">Sector Secundario</option>
-          <option value="3">Sector Terciario</option>
-          <option value="4">Sector Cuaternario</option>
-        </select>
-        <p *ngIf="registerForm.get('sector')?.value === '1'">Empresas involucradas en la extracción y producción de recursos naturales, como agricultura, minería y pesca.</p>
-        <p *ngIf="registerForm.get('sector')?.value === '2'">Empresas dedicadas a la transformación de materias primas en productos manufacturados, como la industria manufacturera y la construcción.</p>
-        <p *ngIf="registerForm.get('sector')?.value === '3'">Empresas que prestan servicios a individuos y otras empresas, incluyendo sectores como comercio, transporte, educación, y servicios financieros.</p>
-        <p *ngIf="registerForm.get('sector')?.value === '4'">Empresas especializadas en la gestión y creación de conocimiento, como investigación y desarrollo, tecnología de la información y servicios de consultoría.</p>
-      </div>
-      <button type="submit"
-        class="bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full">Registrar</button>
-    </form>
-    <div class="mt-8">
-      <p class="text-center text-sm text-gray-600">¿No estás seguro de cómo clasificar tu empresa? <a routerLink="/help-user" class="text-blue-500 hover:text-blue-700 underline">Necesito ayuda</a></p>
-      <p class="text-center text-sm text-gray-600 mt-2">¿Ya tienes una cuenta? <a routerLink="/login" class="text-blue-500 hover:text-blue-700 underline">Inicia sesión</a></p>
     </div>
-  </section>
+  </div>
 </div>
 
 
+<!-- Modal -->
+<div id="popup-modal" [class.hidden]="!isModalOpen" class="fixed inset-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
+  <div class="relative p-4 w-full max-w-md max-h-full">
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <button type="button" (click)="closeModal()" class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white">
+        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+        </svg>
+        <span class="sr-only">Cerrar modal</span>
+      </button>
+      <div class="p-4 md:p-5 text-center">
+        <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+        </svg>
+        <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">¿Estás seguro de que deseas eliminar este producto?</h3>
+        <button (click)="confirmAction()" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
+          Sí, estoy seguro
+        </button>
+        <button (click)="closeModal()" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">No, cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
