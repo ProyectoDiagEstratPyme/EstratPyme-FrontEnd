@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 import { SettingComponent } from '../setting/setting.component';
 
 
@@ -14,7 +15,7 @@ import { SettingComponent } from '../setting/setting.component';
 export class NavbarComponent {
   showMobileMenu: boolean = false;
 
-  constructor(private router: Router){
+  constructor(private router: Router,private authService: AuthService){
 
   }
   toggleMobileMenu(): void {
@@ -30,7 +31,7 @@ export class NavbarComponent {
   }
 
   isDashBoardRoute():boolean{
-    return this.router.url === "/dashboard"
+    return this.router.url === "/dashboard" || this.router.url === "/dashboard/profile" 
   }
 
   isHelpUserRoute():boolean{
@@ -51,12 +52,11 @@ export class NavbarComponent {
   }
 
   cerrarSesion():void{
-    /* falta agregar logica para indicar a la pagina
-    que ya fue deslogueado */
+    this.authService.isLoggedIn=false;
 
     this.router.navigateByUrl('/login');
   }
-
+  
   registrarse():void{
     this.router.navigateByUrl('/register');
   }
@@ -67,6 +67,23 @@ export class NavbarComponent {
 
   goLandingPage():void{
     this.router.navigateByUrl("/landing-page")
+  }
+
+  goInicioDashboard():void{
+    this.router.navigateByUrl("/dashboard")
+  }
+  goInicioDashboardMobile():void{
+    this.router.navigateByUrl("/dashboard")
+    this.toggleMobileMenu()
+  }
+
+  goPerfilUser():void{
+    this.router.navigateByUrl("/dashboard/profile")
+  }
+
+  goPerfilUserMobile():void{
+    this.router.navigateByUrl("/dashboard/profile")
+    this.toggleMobileMenu()
   }
 
 

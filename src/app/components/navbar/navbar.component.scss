@@ -4,6 +4,12 @@
     margin: 0;
 }
 
+.estramipyme-logo{
+    width: 60px;
+    height: 60px;
+    margin: 0;
+}
+
 .button-icon{
     width: 26px;
     height: 24px;
@@ -25,6 +31,10 @@
 .navbar .menu-icon{
     width: 30px;
     height: 26px;
+}
+
+.navbar #estramipyme-logo{
+    margin-left: 10px;
 }
 
 
@@ -88,7 +98,15 @@ nav{
     align-items: center;
 }
 
-@media (max-width: 620px) {
+@media (max-width: 843px) {
+
+    @media (max-width: 300px) {
+
+        .navbar #estramipyme-logo span{ 
+            display: none;
+        }
+    
+    }
 
     .navbar .content-section {
         display: none;

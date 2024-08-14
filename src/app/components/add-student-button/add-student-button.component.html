@@ -1,0 +1,12 @@
+<div class="p-4">
+    <button class="bg-blue-500 text-white px-4 py-2 rounded" (click)="showForm = !showForm">Agregar Estudiante</button>
+    <form *ngIf="showForm" [formGroup]="studentForm" (ngSubmit)="searchStudent()" class="mt-4 space-y-4">
+      <div>
+        <label for="studentId" class="block text-sm font-medium text-gray-700">ID Estudiante:</label>
+        <input id="studentId" formControlName="id" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+      </div>
+      <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded">Buscar</button>
+    </form>
+    <button *ngIf="studentFound" (click)="addStudentToProject()" class="mt-4 bg-yellow-500 text-white px-4 py-2 rounded">Agregar al Proyecto</button>
+  </div>
+  
