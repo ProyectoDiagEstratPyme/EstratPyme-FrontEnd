@@ -102,6 +102,12 @@ export class LoginComponent {
       }, 5000);
     }
   }
+
+  isRegisterRoute(): boolean {
+    return this.router.url === "/register";
+  }
+
+  registrarse() {
+    this.router.navigateByUrl("/register");
+  }
 }
-
-
