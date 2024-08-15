@@ -1,5 +1,5 @@
 <div class="p-4">
-    <button class="bg-green-500 text-white px-4 py-2 rounded" (click)="showForm = !showForm">Agregar Profesor</button>
+    <button class="bg-blue-500 text-white px-4 py-2 rounded" (click)="showForm = !showForm">Agregar Profesor</button>
     <form *ngIf="showForm" [formGroup]="teacherForm" (ngSubmit)="searchTeacher()" class="mt-4 space-y-4">
       <div>
         <label for="teacherId" class="block text-sm font-medium text-gray-700">ID Profesor:</label>

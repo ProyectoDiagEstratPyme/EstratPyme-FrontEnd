@@ -3,13 +3,15 @@ import { Chart, ChartType } from 'chart.js/auto'
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { DashboardService } from '../../services/dashboard.service';
 import { User } from '../../models/user';
+import { AddStudentButtonComponent } from "../../components/add-student-button/add-student-button.component";
+import { AddTeacherButtonComponent } from "../../components/add-teacher-button/add-teacher-button.component";
 
 @Component({
   selector: 'app-dashboard-admin',
   standalone: true,
   templateUrl: './dashboard-admin.component.html',
   styleUrl: './dashboard-admin.component.scss',
-  imports: [NavbarComponent],
+  imports: [NavbarComponent, AddStudentButtonComponent, AddTeacherButtonComponent],
 })
 export class DashboardAdminComponent implements OnInit {
   lineChart: Chart | undefined;

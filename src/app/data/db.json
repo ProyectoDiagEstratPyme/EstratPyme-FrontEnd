@@ -41,15 +41,10 @@
   ],
   "usuarios": [
     {
-      "name": "usuario-prueba",
-      "email": "hola@gmail.com",
-      "password": "123"
-    },
-    {
       "id": "58-922-9425",
       "name": "Ebert, Wilkinson and Gorczany",
       "email": "dstillert0@yandex.ru",
-      "password": "dT0|XGNdJw\"95Q",
+      "password": "dT0|XGNdJw95Q",
       "typeUser": 2,
       "sizeCompany": 3,
       "sector": 4,
