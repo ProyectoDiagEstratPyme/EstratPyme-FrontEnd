@@ -62,11 +62,9 @@ export class DashboardAdminComponent implements OnInit {
       const medium = users.filter((user) => user.sizeCompany == '2').length;
       const large = users.filter((user) => user.sizeCompany == '3').length;
 
-      console.log(small, medium, large);
-
       this.groupedUsersBySize = [small, medium, large];
     });
-    this.initializePieChart();
+    setTimeout(() => this.initializePieChart(), 1000)
   }
 
   getGroupedUsersBySector() {
@@ -78,7 +76,7 @@ export class DashboardAdminComponent implements OnInit {
 
       this.groupedUsersBySector = [primary, secondary, tertiary, quaternary];
     });
-    this.initializeRadarChart();
+    setTimeout(() => this.initializeRadarChart(), 1000);
   }
 
   getGroupedUsersByDownload() {
@@ -88,7 +86,7 @@ export class DashboardAdminComponent implements OnInit {
 
       this.groupedUsersByDownload = [downloaded, notDownloaded];
     });
-    this.initiliazeBarChart();
+    setTimeout(() => this.initiliazeBarChart(), 1000);
   }
 
   updateLineChart() {
@@ -135,9 +133,9 @@ export class DashboardAdminComponent implements OnInit {
             label: 'Empresas registradas por tamaño',
             data: this.groupedUsersBySize,
             backgroundColor: [
-              'rgb(255, 99, 132)',
-              'rgb(54, 162, 235)',
-              'rgb(255, 205, 86)',
+              'rgb(255, 99, 132,0.9)',
+              'rgb(54, 162, 235,0.9)',
+              'rgb(255, 205, 86,0.9)',
             ],
             hoverOffset: 3,
           },
@@ -148,23 +146,40 @@ export class DashboardAdminComponent implements OnInit {
 
   initializeRadarChart() {
     const ctx = document.getElementById('radarChart') as HTMLCanvasElement;
+    console.log(this.groupedUsersBySector)
     this.radarChart = new Chart(ctx, {
       type: 'radar' as ChartType,
       data: {
-        labels: ['Sector Primario', 'Sector Secundario', 'Sector Terciario', 'Sector Cuaternario'],
+        labels: [
+          'Sector Agrícola',
+          'Sector Industrial',
+          'Sector Servicios',
+          'Sector Construcción',
+        ],
         datasets: [
           {
             label: 'Empresas registradas por tamaño',
             data: this.groupedUsersBySector,
             backgroundColor: [
-              'rgb(255, 99, 132)',
-              'rgb(54, 162, 235)',
-              'rgb(255, 205, 86)',
-              'rgb(75, 192, 192)'
+              'rgba(255, 99, 132,0.9)',
+              'rgba(54, 162, 235,0.9)',
+              'rgba(255, 205, 86,0.9)',
+              'rgba(75, 192, 192,0.9)',
             ],
             hoverOffset: 4,
           },
         ],
+      },
+      options: {
+        scales: {
+          r: {
+            angleLines: {
+              display: false,
+            },
+            suggestedMin: 180,
+            suggestedMax: 270,
+          },
+        },
       },
     });
   }
@@ -180,8 +195,8 @@ export class DashboardAdminComponent implements OnInit {
             label: 'Empresas registradas que descargaron el libro',
             data: this.groupedUsersByDownload,
             backgroundColor: [
-              'rgb(255, 99, 132)',
-              'rgb(54, 162, 235)',
+              'rgb(255, 99, 132,0.9)',
+              'rgb(54, 162, 235,0.9)',
             ],
           },
         ],

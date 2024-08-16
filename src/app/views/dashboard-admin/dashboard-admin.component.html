@@ -2,39 +2,39 @@
 
 
 <div class="w-full mt-40 p-5">
- <div>
+ <div class="place-content-between">
   <app-add-student-button></app-add-student-button>
   <app-add-teacher-button></app-add-teacher-button>
- </div> 
+ </div>
   <div class="w-full flex gap-4 mb-5">
-    <div class="bg-sky-200 p-1 content-center rounded-md w-2/4">
+    <div class="bg-sky-600 p-1 content-center rounded-md w-2/4">
       <h5 class="font-bold text-sky-950 mb-2">Total de empresas registradas por mes</h5>
       <select class="rounded-sm mb-2" name="year" id="year" title="Select Year" (change)="handleYearChange($event)">
         <option disabled selected>Seleccione el año</option>
         <option value="2024-">2024</option>
         <option value="2023-">2023</option>
       </select>
-      <div class="w-full p-2 bg-sky-100 rounded-md shadow-2xl hover:shadow-gray-500 transition-shadow">
+      <div class="w-full p-2 bg-zinc-100 rounded-md shadow-2xl hover:shadow-gray-500 transition-shadow">
         <canvas id="lineChart" class="responsive-chart"> {{ lineChart }} </canvas>
       </div>
     </div>
-    <div class="bg-sky-200 p-1 content-center rounded-md w-2/4 flex flex-col">
+    <div class="bg-sky-600 p-1 content-center rounded-md w-2/4 flex flex-col">
       <h5 class="font-bold text-sky-950 mb-2">Total de empresas registradas por tamaño</h5>
-      <div class="w-full p-2 bg-sky-100 rounded-md shadow-2xl hover:shadow-gray-500 transition-shadow">
+      <div class="w-full p-2 bg-zinc-100 rounded-md shadow-2xl hover:shadow-gray-500 transition-shadow">
         <canvas id="pieChart" class="responsive-chart"> {{ pieChart }} </canvas>
       </div>
     </div>
   </div>
   <div class="w-full flex gap-4">
-    <div class="bg-sky-200 p-1 content-center rounded-md w-2/4">
+    <div class="bg-sky-600 p-1 content-center rounded-md w-2/4">
       <h5 class="font-bold text-sky-950 mb-2">Total de empresas registradas por sector</h5>
-      <div class="w-full p-2 bg-sky-100 rounded-md shadow-2xl hover:shadow-gray-500 transition-shadow">
+      <div class="w-full p-2 bg-zinc-100 rounded-md shadow-2xl hover:shadow-gray-500 transition-shadow">
         <canvas id="radarChart" class="responsive-chart"> {{ radarChart }} </canvas>
       </div>
     </div>
-    <div class="bg-sky-200 p-1 content-center rounded-md w-2/4 flex flex-col">
+    <div class="bg-sky-600 p-1 content-center rounded-md w-2/4 flex flex-col">
       <h5 class="font-bold text-sky-950 mb-2">Total de empresas registradas que han bajado el libro</h5>
-      <div class="w-full p-2 bg-sky-100 rounded-md shadow-2xl hover:shadow-gray-500 transition-shadow">
+      <div class="w-full p-2 bg-zinc-100 rounded-md shadow-2xl hover:shadow-gray-500 transition-shadow">
         <canvas id="barChart" class="responsive-chart"> {{ barChart }} </canvas>
       </div>
     </div>
