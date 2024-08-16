@@ -2,6 +2,7 @@ import { Component, Input, input, OnInit } from '@angular/core';
 import { InfoSecComponent } from '../info-sec/info-sec.component';
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,7 @@ import { User } from '../../models/user';
 export class DashboardComponent implements OnInit {
   user: User|null=null;
 
-  constructor(private userService:UserService){}
+  constructor(private userService:UserService,private router: Router){}
 
   ngOnInit(): void {
     this.userService.currentUser.subscribe({
@@ -22,6 +23,10 @@ export class DashboardComponent implements OnInit {
         this.user=user
       }
     })
+  }
+
+  goToTest():void{
+    this.router.navigateByUrl("/dashboard/test")
   }
 
 }

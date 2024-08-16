@@ -9,6 +9,7 @@ import { SettingComponent } from './components/setting/setting.component';
 import { DashboardAdminComponent } from './views/dashboard-admin/dashboard-admin.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { DashboardViewComponent } from './views/dashboard-view/dashboard-view.component';
+import { TestComponent } from './components/test/test.component';
 
 
 export const routes: Routes = [
@@ -17,6 +18,11 @@ export const routes: Routes = [
             {
                 path:'',
                 component:DashboardComponent
+            },
+            {
+                path:"test",
+                component:TestComponent
+
             },
             {
                 path:"profile",
