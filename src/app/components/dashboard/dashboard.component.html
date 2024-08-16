@@ -3,7 +3,7 @@
     Saludos Empresa {{ user?.name }}
   </div>
   <section class="flex flex-col w-2/5 gap-y-20">
-    <button class="bg-blue-500 text-white w-36 h-20 flex justify-center items-center rounded-2xl text-center">
+    <button (click)="goToTest()" class="bg-blue-500 text-white w-36 h-20 flex justify-center items-center rounded-2xl text-center">
       <i class="fas fa-play fa-3x"></i>
       <span class="ml-2">Realizar prueba</span>
     </button>
