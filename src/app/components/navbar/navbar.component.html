@@ -21,7 +21,7 @@
                 </button>
             </div>
             <div class="right-section">
-                <button *ngIf="isDashBoardRoute()" (click)="cerrarSesion()" class="rounded border border-gray-300">
+                <button *ngIf="isDashBoardRoute() || isDashBoardAdmin()" (click)="cerrarSesion()" class="rounded border border-gray-300">
                     <span>Cerrar Sesión</span>
                     <img src="assets/images/log-out.png" alt="Icono log out" class="button-icon">
                 </button>
@@ -51,7 +51,7 @@
                     <span>Perfil</span>
                     <img src="assets/images/user.png" alt="Icono perfil" class="button-icon">
                 </button>
-                <button *ngIf="isDashBoardRoute()" (click)="cerrarSesion()" class="rounded border border-gray-300">
+                <button *ngIf="isDashBoardRoute() || isDashBoardAdmin()" (click)="cerrarSesion()" class="rounded border border-gray-300">
                     <span>Cerrar Sesión</span>
                     <img src="assets/images/log-out.png" alt="Icono log out" class="button-icon">
                 </button>
