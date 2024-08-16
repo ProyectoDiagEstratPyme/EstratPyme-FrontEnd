@@ -194,10 +194,8 @@ export class DashboardAdminComponent implements OnInit {
           {
             label: 'Empresas registradas que descargaron el libro',
             data: this.groupedUsersByDownload,
-            backgroundColor: [
-              'rgb(255, 99, 132,0.9)',
-              'rgb(54, 162, 235,0.9)',
-            ],
+            backgroundColor: ['rgb(255, 99, 132,0.9)', 'rgb(54, 162, 235,0.9)'],
+            barPercentage: 0.5,
           },
         ],
       },
