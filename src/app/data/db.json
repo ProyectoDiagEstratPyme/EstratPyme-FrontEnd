@@ -1,4 +1,19 @@
 {
+  "tests": [
+    {
+      "id": "11c6",
+      "id_empresa": "58-922-9425",
+      "pregunta1": "Porque vimos una gran oportunidad de mercado hace 5 años",
+      "pregunta2": "En el sector tecnológico",
+      "pregunta3": "Ofrecemos soluciones tecnológicas",
+      "pregunta4": "El tiempo de desarrollo de los productos.",
+      "pregunta5": "Nuestros productos son de calidad y son confiables.",
+      "pregunta6": "Pagina-web",
+      "pregunta7": "Globant,Bancolombia y Postobón",
+      "pregunta8": "Manejamos los mejores precios en el mercado.",
+      "pregunta9": "Que se expanda internacionalmente."
+    }
+  ],
   "admins": [
     {
       "id": "1",
@@ -50,7 +65,7 @@
       "sector": 4,
       "registerDate": "2023-12",
       "isBookDonwloaded": true,
-      "isTestDone": false
+      "isTestDone": true
     },
     {
       "id": "51-918-1200",

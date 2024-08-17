@@ -106,6 +106,16 @@ select:focus {
     background-color: #007bff;
 }
 
+#enviar-button:disabled {
+    background-color: #cccccc; 
+    border-color: #aaaaaa; 
+    color: #666666; 
+    cursor: not-allowed; 
+    opacity: 0.6;
+    box-shadow: none;
+    transform: none;
+}
+
 
 @media (min-width: 768px) {
     .contenedor {
