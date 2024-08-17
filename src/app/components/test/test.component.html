@@ -4,7 +4,7 @@
 </button>
 
 
-<div class="contenedor">
+<div class="contenedor" *ngIf="!isFormSubmitted">
     <div class="title">
         <p>Formulario Diágnostico Estramipyme</p>
     </div>
@@ -100,10 +100,14 @@
             <button (click)="nextStep()" *ngIf="currentStep < totalSteps">
                 <span>Siguiente</span>
             </button>
-            <button (click)="submitForm()" *ngIf="currentStep === totalSteps" id="enviar-button">
+            <button (click)="submitForm()" [disabled]="!form.valid" *ngIf="currentStep === totalSteps" id="enviar-button">
                 <span>Enviar</span>
             </button>
         </div>
         
     </div>
+</div>
+
+<div class="contenedor" *ngIf="isFormSubmitted">
+    <p style="font-weight: bold;font-size: larger;">El formulario fue enviado correctamente.</p>
 </div>
