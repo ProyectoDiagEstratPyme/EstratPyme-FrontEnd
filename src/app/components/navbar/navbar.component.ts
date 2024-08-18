@@ -31,7 +31,7 @@ export class NavbarComponent {
   }
 
   isDashBoardRoute():boolean{
-    return this.router.url === "/dashboard" || this.router.url === "/dashboard/profile" || this.router.url ==="/dashboard/test"
+    return this.router.url === "/dashboard" || this.router.url === "/dashboard/profile" || this.router.url ==="/dashboard/test" || this.router.url ==="/dashboard/estado-prueba"
   }
 
   isDashBoardAdmin():boolean{
