@@ -1,47 +1,57 @@
-<main class="p-4 px-24 flex flex-row h-screen sm:flex-wrap sm:flex-col justify-around background">
-  <div class="bg-white text-blue-500 font-bold text-2xl p-6 m-2 rounded-lg shadow-lg border border-blue-700">
-    Saludos Empresa {{ user?.name }}
+<main class="bg-[#212529]  py-5">
+  <div class="px-5">
+    <div class="container mx-auto flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 px-4">
+        <p class="text-white text-4xl">Bienvenido {{ user?.name }} a Estramipyme</p>
+        <p class="text-gray-400 italic mt-4">"Recuerda que una buena estrategia puede ayudar a transformar desafíos en oportunidades y asegurar un crecimiento sostenible."</p>
+      </div>
+      <div class="md:w-1/2 mt-4 md:mt-0 flex justify-center bg-[#343a40] shadow-lg rounded-lg p-4">
+        <img src="assets/images/imgLanding/tercerImg.png" alt="Imagen de Estramipyme" class="w-full max-w-xs h-auto object-cover rounded-lg">
+      </div>
+    </div>
   </div>
-  <section class="flex flex-col w-2/5 gap-y-20">
-    <button (click)="goToTest()" class="bg-blue-500 text-white w-36 h-20 flex justify-center items-center rounded-2xl text-center">
-      <i class="fas fa-play fa-3x"></i>
-      <span class="ml-2">Realizar prueba</span>
-    </button>
-    <button class="bg-gray-500 text-white w-36 h-20 flex justify-center items-center rounded-2xl text-center">
-      <i class="fas fa-check fa-2x"></i>
-      <span class="ml-2">Estado de la prueba</span>
-    </button>
-  </section>
-
-  <section class="flex-grow flex flex-col justify-center">
-    <app-info-sec cardTitle="Recursos de información">
-      <a target="_blank">
-        <img class="w-30 h-72" src="assets/mypyme.png" />
-      </a>
-    </app-info-sec>
-  </section>
 </main>
 
+<section class="flex-grow flex flex-col md:flex-row justify-between items-center px-5 bg-[#F8F9FA]  py-5">
+  <div class="md:w-1/2 flex justify-start">
+    <a target="_blank">
+      <img class="w-full max-w-xs h-auto" src="assets/images/imgDasCompany/mypyme.png" />
+    </a>
+  </div>
+  <div class="md:w-1/2 flex justify-end">
+    <app-info-sec cardTitle="Recursos de información"></app-info-sec>
+  </div>
+</section>
 
-
-
-   <!-- <main class="p-4 flex flex-row h-screen sm:flex-wrap sm:flex-col">
-    
-  
-    <section class="flex flex-col w-2/5 sm:w-screen justify-around">
-      <app-info-sec cardTitle="Realizar prueba">
-        <div class="bg-gray-500 size-64"></div>
-      </app-info-sec>
-      <app-info-sec cardTitle="Estado de la prueba">
-        <div class="bg-gray-500 size-64"></div>
-      </app-info-sec>
-    </section>
-    <section class="flex-grow flex flex-col justify-center mb-4 sm:mb-0 sm:mr-4">
-      <app-info-sec cardTitle="Recursos de información">
-        <a href="#">
-          <img class="w-30 h-72 " src="assets/mypyme.png" />
-        </a>
-      </app-info-sec>
-    </section>
-  </main>
-   -->
+<section class="flex justify-center w-full gap-x-10 px-5 overflow-x-hidden py-5">
+  <div class="card-title mb-3 w-full md:w-1/4">
+    <div class="card h-100 shadow-2xl border-0 rounded-lg">
+      <img src="assets/images/imgDasCompany/segundaImg.png" alt="" class="card-img-top w-full h-auto rounded-t-lg">
+      <div class="card-body p-4 flex flex-col items-center">
+        <h3 class="text-lg font-bold mb-2">Realización de Test</h3>
+        <p class="mb-4">
+          Acá puedes realizar el test que nos ayudará a saber el funcionamiento de tu empresa para conocer si tus estrategias son las correctas.
+        </p>
+        <button (click)="goToTest()" class="bg-blue-500 text-white w-auto h-auto px-4 py-2 flex justify-center items-center rounded-lg text-center shadow-md">
+          <i class="fas fa-play fa-2x"></i>
+          <span class="ml-2">Realizar prueba</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="card-title mb-3 w-full md:w-1/4">
+    <div class="card h-100 shadow-2xl border-0 rounded-lg">
+      <img src="assets/images/imgDasCompany/segundaImg.png" alt="" class="card-img-top w-full h-auto rounded-t-lg">
+      <div class="card-body p-4 flex flex-col items-center">
+        <h3 class="text-lg font-bold mb-2">Estado de la Prueba</h3>
+        <p class="mb-4">
+          Acá puedes realizar el test que nos ayudará a saber el funcionamiento de tu empresa para conocer si tus estrategias son las correctas.
+        </p>
+        <button class="bg-gray-500 text-white w-auto h-auto px-4 py-2 flex justify-center items-center rounded-lg text-center shadow-md">
+          <i class="fas fa-check fa-2x"></i>
+          <span class="ml-2">Estado de la prueba</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
