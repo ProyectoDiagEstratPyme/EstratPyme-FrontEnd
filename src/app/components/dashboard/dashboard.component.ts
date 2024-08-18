@@ -36,6 +36,10 @@ export class DashboardComponent implements OnInit {
     
   }
 
+  goToEstado():void{
+    this.router.navigateByUrl("/dashboard/estado-prueba")
+  }
+
   closeModal():void{
     this.isModalVisible=false
   }

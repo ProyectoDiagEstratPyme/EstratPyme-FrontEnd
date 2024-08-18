@@ -1,0 +1,35 @@
+<button (click)="goHome()">
+    <img src="assets/images/return.png" alt="Icono volver" class="button-icon">
+    <span>Volver a inicio</span>
+</button>
+
+<div class="contenedor">
+    <p>
+        El estado de tu prueba es: {{estado_prueba}}
+    </p>
+    <div *ngIf="user!.isTestDone" class="contacto">
+        <p>¿Quieres recibir un asesoramiento más personalizado en la estrategia Estramipyme?</p>
+        <button (click)="openModal()">Presiona aquí</button>
+    </div>
+</div>
+
+<div id="popup-modal" tabindex="-1" 
+     [ngClass]="{ 'hidden': !isModalVisible }" 
+     class="hidden overflow-y-auto overflow-x-hidden fixed inset-0 z-50 flex justify-center items-center w-full h-screen">
+  <div class="relative p-4 w-full max-w-md max-h-full">
+      <div class="relative bg-gray-300 rounded-lg shadow">
+          <button (click)="closeModal()" type="button" class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="popup-modal">
+              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+              </svg>
+              <span class="sr-only">Close modal</span>
+          </button>
+          <div class="p-4 md:p-5 text-center">
+              <svg class="mx-auto mb-4 text-black w-12 h-12" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+              </svg>
+              <h3 class="mb-5 text-lg font-normal text-black">Próximamente serás contactado por un administrador de la estrategia Estramipyme a través de tu correo.</h3>
+            </div>
+      </div>
+  </div>
+</div>

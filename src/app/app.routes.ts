@@ -10,6 +10,7 @@ import { DashboardAdminComponent } from './views/dashboard-admin/dashboard-admin
 import { ProfileComponent } from './components/profile/profile.component';
 import { DashboardViewComponent } from './views/dashboard-view/dashboard-view.component';
 import { TestComponent } from './components/test/test.component';
+import { EstadoPruebaComponent } from './components/estado-prueba/estado-prueba.component';
 
 
 export const routes: Routes = [
@@ -27,6 +28,10 @@ export const routes: Routes = [
             {
                 path:"profile",
                 component:ProfileComponent,
+            },
+            {
+                path:"estado-prueba",
+                component:EstadoPruebaComponent
             }
         ]
      },
