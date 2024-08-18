@@ -1,0 +1,92 @@
+<app-navbar></app-navbar>
+
+<div class="contenedor-grande" *ngIf="test && form">
+    <button (click)="goHome()">
+        <img src="assets/images/return.png" alt="Icono volver" class="button-icon">
+        <span>Volver a pruebas</span>
+    </button>
+    <div [formGroup]="form" class="contenedor">
+        <!-- Pregunta 1 -->
+        <div *ngIf="currentStep === 1" formGroupName="section1">
+        <label for="field1">1.¿Por qué crearon el negocio?</label>
+        <textarea id="field1" formControlName="field1"></textarea>
+        <div *ngIf="form.get('section1.field1')?.invalid && form.get('section1.field1')?.touched" class="error-message">
+            La pregunta 1 es obligatoria.
+        </div>
+        <!-- Pregunta 2 -->
+        <label for="field2">2.¿En qué sector o industria compite su negocio?</label>
+        <textarea id="field2" formControlName="field2"></textarea>
+        <div *ngIf="form.get('section1.field2')?.invalid && form.get('section1.field2')?.touched" class="error-message">
+            La pregunta 2 es obligatoria.
+        </div>
+        <!-- Pregunta 3 -->
+        <label for="field3">3.¿Qué productos y/o servicios ofrece?</label>
+        <textarea id="field3" formControlName="field3"></textarea>
+        <div *ngIf="form.get('section1.field3')?.invalid && form.get('section1.field3')?.touched" class="error-message">
+            La pregunta 3 es obligatoria.
+        </div>
+
+        </div>
+    
+        <!-- Pregunta 4-->
+        <div *ngIf="currentStep === 2" formGroupName="section2">
+        <label for="field4">4.¿Cuáles son los reclamos o quejas de los clientes más frecuentes?</label>
+        <textarea id="field4" formControlName="field4"></textarea>
+        <div *ngIf="form.get('section2.field4')?.invalid && form.get('section2.field4')?.touched" class="error-message">
+            La pregunta 4 es obligatoria.
+        </div>
+        <!-- Pregunta 5 -->
+        <label for="field5">5.¿Cuáles son las razones por las que reciben más felicitaciones?</label>
+        <textarea id="field5" formControlName="field5"></textarea>
+        <div *ngIf="form.get('section2.field5')?.invalid && form.get('section2.field5')?.touched" class="error-message">
+            La pregunta 5 es obligatoria.
+        </div>
+        <!-- Pregunta 6 -->
+        <label for="field6">6.¿Cuál es su principal medio de comunicación con los clientes?</label>
+        <div class="select-container">
+            <select id="field6" formControlName="field6">
+                <option value="">Seleccione una opción</option>
+                <option value="Local">Local</option>
+                <option value="WhatsApp">WhatsApp</option>
+                <option value="Celular">Celular</option>
+                <option value="Telefono-fijo">Teléfono fijo</option>
+                <option value="Pagina-web">Página web</option>
+                <option value="Vendedor">Vendedor</option>
+            </select>
+        </div>
+        <div *ngIf="form.get('section2.field6')?.invalid && form.get('section2.field6')?.touched" class="error-message">
+            Seleccionar un medio es obligatorio.
+        </div>
+        </div>
+    
+        <!-- Pregunta 7 -->
+        <div *ngIf="currentStep === 3" formGroupName="section3">
+        <label for="field7">7.¿Cuáles son tres competidores más fuertes?</label>
+        <textarea id="field7" formControlName="field7"></textarea>
+        <div *ngIf="form.get('section3.field7')?.invalid && form.get('section3.field7')?.touched" class="error-message">
+            La pregunta 7 es obligatoria
+        </div>
+        <!-- Pregunta 8 -->
+        <label for="field8">8.¿Que hace diferente su negocio de otros?</label>
+        <textarea id="field8" formControlName="field8"></textarea>
+        <div *ngIf="form.get('section3.field8')?.invalid && form.get('section3.field8')?.touched" class="error-message">
+            La pregunta 8 es obligatoria.
+        </div>
+        <!-- Pregunta 9 -->
+        <label for="field9">9.¿Cuál es su mayor sueño con el negocio?</label>
+        <textarea id="field9" formControlName="field9"></textarea>
+        <div *ngIf="form.get('section3.field9')?.invalid && form.get('section3.field9')?.touched" class="error-message">
+            La pregunta 9 es obligatoria.
+        </div>
+        </div>
+        <div class="flex-horizontal">
+            <button (click)="prevStep()" *ngIf="currentStep>1">
+                <span>Anterior</span>
+            </button>
+            <button (click)="nextStep()" *ngIf="currentStep < totalSteps">
+                <span>Siguiente</span>
+            </button>
+        </div>
+        
+    </div>
+</div>

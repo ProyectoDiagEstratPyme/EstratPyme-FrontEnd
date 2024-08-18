@@ -35,7 +35,7 @@ export class NavbarComponent {
   }
 
   isDashBoardAdmin():boolean{
-    return this.router.url==="/dashboard-admin"
+    return this.router.url==="/dashboard-admin" || this.router.url==="/pruebas-admin" || /^\/prueba\/\d+/.test(this.router.url);
   }
 
   isHelpUserRoute():boolean{
@@ -88,6 +88,10 @@ export class NavbarComponent {
   goPerfilUserMobile():void{
     this.router.navigateByUrl("/dashboard/profile")
     this.toggleMobileMenu()
+  }
+
+  goPruebas():void{
+    this.router.navigateByUrl("/pruebas-admin")
   }
 
 

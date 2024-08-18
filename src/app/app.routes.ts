@@ -11,6 +11,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { DashboardViewComponent } from './views/dashboard-view/dashboard-view.component';
 import { TestComponent } from './components/test/test.component';
 import { EstadoPruebaComponent } from './components/estado-prueba/estado-prueba.component';
+import { PruebasAdminComponent } from './views/pruebas-admin/pruebas-admin.component';
+import { PruebaDetailsComponent } from './views/prueba-details/prueba-details.component';
 
 
 export const routes: Routes = [
@@ -36,6 +38,8 @@ export const routes: Routes = [
         ]
      },
     { path: 'dashboard-admin', component: DashboardAdminComponent ,canActivate: [CanActivateUser]},
+    { path: 'pruebas-admin', component: PruebasAdminComponent,canActivate: [CanActivateUser]},
+    { path: 'prueba/:id', component:PruebaDetailsComponent,canActivate: [CanActivateUser]},
     { path: 'register', component: RegisterComponent },
     {path: 'help-user', component: HelpUserComponent},
     {path: 'login', component: LoginComponent},

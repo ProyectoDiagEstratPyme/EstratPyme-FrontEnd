@@ -85,6 +85,7 @@ export class TestComponent implements OnInit {
           this.testService.updateisTestDone(this.user).subscribe({
             next:()=>{
               this.isFormSubmitted=true
+              this.user!.isTestDone=true
             }
           })
         }

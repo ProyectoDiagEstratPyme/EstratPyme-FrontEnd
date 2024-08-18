@@ -12,6 +12,32 @@
       "pregunta7": "Globant,Bancolombia y Postobón",
       "pregunta8": "Manejamos los mejores precios en el mercado.",
       "pregunta9": "Que se expanda internacionalmente."
+    },
+    {
+      "id": "3b75",
+      "id_empresa": "51-918-1200",
+      "pregunta1": "Porque en mi sector habían muchos fumadores",
+      "pregunta2": "En la industria tabacalera",
+      "pregunta3": "Cigarrillos",
+      "pregunta4": "Que muchos de ellos se vuelven adictos.",
+      "pregunta5": "La gran calidad de los productos.",
+      "pregunta6": "Vendedor",
+      "pregunta7": "Malboro,Boston,Rumba",
+      "pregunta8": "Los cigarrillos de colores.",
+      "pregunta9": "Crecer a nivel nacional."
+    },
+    {
+      "id": "254a",
+      "id_empresa": "24-465-5809",
+      "pregunta1": "Vimos un problema de transporte en la cuidad.",
+      "pregunta2": "En el sector de transporte.",
+      "pregunta3": "Ofrecemos transporte público.",
+      "pregunta4": "El tiempo de espera de los buses.",
+      "pregunta5": "Buses modernos y limpios.",
+      "pregunta6": "WhatsApp",
+      "pregunta7": "Nortebuses,Bellanita,Coonatra.",
+      "pregunta8": "Nuestros buses eléctricos.",
+      "pregunta9": "Que seamos una empresa a nivel continental."
     }
   ],
   "admins": [
@@ -77,7 +103,7 @@
       "sector": 1,
       "registerDate": "2024-05",
       "isBookDonwloaded": false,
-      "isTestDone": false
+      "isTestDone": true
     },
     {
       "id": "24-465-5809",
@@ -89,7 +115,7 @@
       "sector": 4,
       "registerDate": "2024-07",
       "isBookDonwloaded": true,
-      "isTestDone": false
+      "isTestDone": true
     },
     {
       "id": "57-852-9135",
