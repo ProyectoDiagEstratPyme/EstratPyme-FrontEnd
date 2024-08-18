@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+
+<div class="contenedor-grande">
+    <button (click)="goHome()">
+        <img src="assets/images/return.png" alt="Icono volver" class="button-icon">
+        <span>Volver a gráficas</span>
+    </button>
+    <div class="contenedor">
+        <p>Empresas que ya realizaron la prueba:</p>
+        @for (empresa of empresas; track empresa.id) {
+            <app-boton-empresa [empresa]="empresa">
+    
+            </app-boton-empresa>
+        }
+    </div>
+</div>
+

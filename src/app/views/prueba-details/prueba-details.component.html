@@ -1,25 +1,11 @@
-<button (click)="goHome()">
-    <img src="assets/images/return.png" alt="Icono volver" class="button-icon">
-    <span>Volver a inicio</span>
-</button>
+<app-navbar></app-navbar>
 
-
-<div class="contenedor" *ngIf="!isFormSubmitted">
-    <div class="title">
-        <p>Formulario Diágnostico Estramipyme</p>
-    </div>
-
-    <div style="margin-bottom: 50px;">
-        <p style="font-weight: bold;">¿Qué es el formulario Estramipyme?</p>
-        <p>El formulario Estramipyme es una herramienta estratégica diseñada para ayudar a las empresas a definir y afinar su enfoque de trabajo. 
-            A través de una serie de preguntas detalladas, este formulario permite conocer a fondo los objetivos, métodos y estrategias de cada 
-            empresa. Al completar el formulario, obtendrás una visión clara de cómo opera tu empresa, qué metas persigue y cómo se estructura su
-            estrategia general. Esta información es esencial para optimizar la planificación y tomar decisiones informadas que impulsen el 
-            crecimiento y la eficiencia de tu negocio.
-        </p>
-    </div>
-
-    <div [formGroup]="form">
+<div class="contenedor-grande" *ngIf="test && form">
+    <button (click)="goHome()">
+        <img src="assets/images/return.png" alt="Icono volver" class="button-icon">
+        <span>Volver a pruebas</span>
+    </button>
+    <div [formGroup]="form" class="contenedor">
         <!-- Pregunta 1 -->
         <div *ngIf="currentStep === 1" formGroupName="section1">
         <label for="field1">1.¿Por qué crearon el negocio?</label>
@@ -100,14 +86,7 @@
             <button (click)="nextStep()" *ngIf="currentStep < totalSteps">
                 <span>Siguiente</span>
             </button>
-            <button (click)="submitForm()" [disabled]="!form.valid" *ngIf="currentStep === totalSteps" id="enviar-button">
-                <span>Enviar</span>
-            </button>
         </div>
         
     </div>
-</div>
-
-<div class="contenedor" *ngIf="isFormSubmitted">
-    <p style="font-weight: bold;font-size: larger;">El formulario fue enviado correctamente.</p>
 </div>

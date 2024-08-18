@@ -1,10 +1,13 @@
+.contenedor-grande{
+    margin-top: 70px;
+}
+
 .contenedor{
     display: flex;
     flex-direction: column;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 30px 5px;
+    justify-content: center;
+    padding: 5px;
 }
 
 .flex-horizontal{
@@ -13,15 +16,6 @@
     margin: 20px;
 }
 
-.title{
-    text-align: center;
-    justify-content: center;
-    font-weight: 600;
-    font-size: 24px;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
 .button-icon{
     width: 26px;
     height: 24px;
@@ -73,12 +67,6 @@ label {
     display: block;
 }
 
-.error-message {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
-}
-
 .select-container{
     display: flex;
     justify-content: center;
@@ -101,21 +89,6 @@ select:focus {
     outline: none;
     box-shadow: 0 0 0 2px rgba(38, 143, 255, 0.25);
 }
-
-#enviar-button{
-    background-color: #007bff;
-}
-
-#enviar-button:disabled {
-    background-color: #cccccc; 
-    border-color: #aaaaaa; 
-    color: #666666; 
-    cursor: not-allowed; 
-    opacity: 0.6;
-    box-shadow: none;
-    transform: none;
-}
-
 
 @media (min-width: 768px) {
     .contenedor {
