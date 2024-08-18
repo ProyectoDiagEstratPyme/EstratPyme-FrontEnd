@@ -63,16 +63,16 @@ export class ProfileComponent implements OnInit {
   setSector(user:User|null):void{
     if(user?.sector){
       if(user.sector===1 || user.sector==="1"){
-        this.user_sector="Primario"
+        this.user_sector="Agrícola"
       }
       if(user.sector===2 || user.sector==="2"){
-        this.user_sector="Secundario"
+        this.user_sector="Industrial"
       }
       if(user.sector===3 || user.sector==="3"){
-        this.user_sector="Terciario"
+        this.user_sector="Servicios"
       }
       if(user.sector===4 || user.sector==="4"){
-        this.user_sector="Cuaternario"
+        this.user_sector="Construcción"
       }
     }
   }
