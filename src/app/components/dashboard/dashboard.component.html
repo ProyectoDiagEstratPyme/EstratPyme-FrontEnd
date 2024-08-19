@@ -1,29 +1,34 @@
-<main class="bg-[#212529]  py-5">
-  <div class="px-5">
-    <div class="container mx-auto flex flex-col md:flex-row items-center">
-      <div class="md:w-1/2 px-4">
-        <p class="text-white text-4xl">Bienvenido {{ user?.name }} a Estramipyme</p>
-        <p class="text-gray-400 italic mt-4">"Recuerda que una buena estrategia puede ayudar a transformar desafíos en oportunidades y asegurar un crecimiento sostenible."</p>
+<main class="bg-[#212529] pt-10 mb-5">
+  <div class="container mx-auto px-5">
+    <div class="flex flex-col lg:flex-row items-center justify-center">
+      <div class="lg:w-2/3 xl:w-7/12 2xl:w-1/2 px-2 py-4 mx-auto text-center lg:text-left lg:ml-10 shadow-lg rounded-lg">
+        <p class="text-white text-3xl md:text-4xl lg:text-5xl poppins-bold">Bienvenido {{ user?.name }} a Estramipyme</p>
+        <p class="text-gray-400 italic mt-2 text-xl md:text-2xl lato-regular-italic">"Recuerda que una buena estrategia puede ayudar a transformar desafíos en oportunidades y asegurar un crecimiento sostenible."</p>
       </div>
-      <div class="md:w-1/2 mt-4 md:mt-0 flex justify-center bg-[#343a40] shadow-lg rounded-lg p-4">
-        <img src="assets/images/imgLanding/tercerImg.png" alt="Imagen de Estramipyme" class="w-full max-w-xs h-auto object-cover rounded-lg">
+      <div class="flex xl:w-5/12 2xl:w-1/2 justify-center mx-auto mt-5 lg:mt-0">
+        <img src="assets/images/imgLanding/tercerImg.png" alt="Imagen de Estramipyme" class="w-full md:w-3/4 lg:w-2/3 h-auto object-cover rounded-lg">
       </div>
     </div>
   </div>
 </main>
 
-<section class="flex-grow flex flex-col md:flex-row justify-between items-center px-5 bg-[#F8F9FA]  py-5">
-  <div class="md:w-1/2 flex justify-start">
-    <a target="_blank">
-      <img class="w-full max-w-xs h-auto" src="assets/images/imgDasCompany/mypyme.png" />
-    </a>
-  </div>
-  <div class="md:w-1/2 flex justify-end">
-    <app-info-sec cardTitle="Recursos de información"></app-info-sec>
+<section class="py-5 mb-10">
+  <div class="container mx-auto px-5">
+    <div class="flex flex-col lg:flex-row items-center justify-center">
+      <div class="justify-center mx-auto mb-5 lg:mb-0 lg:mr-5">
+        <a href="assets/images/imgDasCompany/Libro_EstramyPyme_VERSI%C3%93N+DIGITAL_EditorialEAFIT%20(3).pdf" download>
+          <img class="w-full max-w-xs h-auto object-cover rounded-lg" src="assets/images/imgDasCompany/mypyme.png"/>
+        </a>
+      </div>
+      <div class="lg:w-2/3 xl:w-2/3 2xl:w-1/2 px-4 py-6 mx-auto text-center md:text-left shadow-lg rounded-lg">
+        <p class="lato-regular text-2xl md:text-3xl">Guía Oficial de Estrategias</p>
+        <p class="lato-light mt-4 text-lg md:text-xl">Este es nuestro material oficial, donde encontrarás las estrategias diseñadas específicamente para fortalecer tu compañía. Todo el contenido ha sido desarrollado con la colaboración de expertos y está respaldado por una atención profesional dedicada a tu éxito empresarial."</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="flex justify-center w-full gap-x-10 px-5 overflow-x-hidden py-5">
+<section class="flex flex-col md:flex-row justify-center w-full gap-x-20 px-5 overflow-x-hidden py-5 bg-gray-200 pt-10 pb-10">
   <div class="card-title mb-3 w-full md:w-1/4">
     <div class="card h-100 shadow-2xl border-0 rounded-lg">
       <img src="assets/images/imgDasCompany/segundaImg.png" alt="" class="card-img-top w-full h-auto rounded-t-lg">
@@ -47,7 +52,7 @@
         <p class="mb-4">
           Acá puedes realizar el test que nos ayudará a saber el funcionamiento de tu empresa para conocer si tus estrategias son las correctas.
         </p>
-        <button (click)="goToEstado()"   class="bg-gray-500 text-white w-auto h-auto px-4 py-2 flex justify-center items-center rounded-lg text-center shadow-md">
+        <button (click)="goToEstado()" class="bg-gray-500 text-white w-auto h-auto px-4 py-2 flex justify-center items-center rounded-lg text-center shadow-md">
           <i class="fas fa-check fa-2x"></i>
           <span class="ml-2">Estado de la prueba</span>
         </button>
@@ -55,6 +60,13 @@
     </div>
   </div>
 </section>
+
+<!-- Footer -->
+<footer class="bg-[#212529] py-5">
+  <div class="container mx-auto px-5 text-center text-white">
+    <p class="text-sm">&copy; 2023 Estramipyme. Todos los derechos reservados.</p>
+  </div>
+</footer>
 
 <!-- Modal para empresas que ya realizaron la prueba -->
 <div id="popup-modal" tabindex="-1" 
@@ -81,3 +93,4 @@
       </div>
   </div>
 </div>
+
