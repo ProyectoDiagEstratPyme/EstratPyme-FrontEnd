@@ -38,6 +38,19 @@
       "pregunta7": "Nortebuses,Bellanita,Coonatra.",
       "pregunta8": "Nuestros buses eléctricos.",
       "pregunta9": "Que seamos una empresa a nivel continental."
+    },
+    {
+      "id": "f6ea",
+      "id_empresa": "18-837-9915",
+      "pregunta1": "Necesidad",
+      "pregunta2": "Logístico",
+      "pregunta3": "Reparto",
+      "pregunta4": "prueba",
+      "pregunta5": "prueba",
+      "pregunta6": "Telefono-fijo",
+      "pregunta7": "prueba",
+      "pregunta8": "prueba",
+      "pregunta9": "prueba"
     }
   ],
   "admins": [
@@ -151,7 +164,7 @@
       "sector": 1,
       "registerDate": "2024-06",
       "isBookDonwloaded": false,
-      "isTestDone": false
+      "isTestDone": true
     },
     {
       "id": "69-304-7998",
