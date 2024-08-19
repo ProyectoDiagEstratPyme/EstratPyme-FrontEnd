@@ -15,7 +15,7 @@
                   <div id="error-message" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert" style="display:none;">
                   </div>
                   <h1 class="font-bold pt-4 text-center text-xl">Regístrate a EstramyPyme!</h1>
-                  
+
                   <form [formGroup]="registerForm" (ngSubmit)="register()" class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
                     <div class="mb-2">
                       <label for="name" class="block text-white">Nombre o Razón Social</label>
@@ -64,10 +64,10 @@
                       <label for="sector" class="block text-white">Sector al que pertenece la empresa</label>
                       <select id="sector" formControlName="sector" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
                         <option value="0">Seleccione</option>
-                        <option value="1">Sector Primario</option>
-                        <option value="2">Sector Secundario</option>
-                        <option value="3">Sector Terciario</option>
-                        <option value="4">Sector Cuaternario</option>
+                        <option value="1">Sector Agrícola</option>
+                        <option value="2">Sector Industrial</option>
+                        <option value="3">Sector Servicios</option>
+                        <option value="4">Sector Construcción</option>
                       </select>
                       <p *ngIf="registerForm.get('sector')?.value === '1'">Empresas involucradas en la extracción y producción de recursos naturales, como agricultura, minería y pesca.</p>
                       <p *ngIf="registerForm.get('sector')?.value === '2'">Empresas dedicadas a la transformación de materias primas en productos manufacturados, como la industria manufacturera y la construcción.</p>
