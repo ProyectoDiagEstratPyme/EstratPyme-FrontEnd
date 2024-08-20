@@ -15,6 +15,7 @@ export class AddStudentButtonComponent {
   studentForm: FormGroup;
   studentFound = false;
   studentId: number | null = null;
+  studentName: string | null = null;
   showErrorModal = false;
   showSuccessModal = false;
   errorMessage = '';
@@ -45,9 +46,11 @@ export class AddStudentButtonComponent {
           this.errorMessage = 'No existe el estudiante.';
           this.studentFound = false;
           this.studentId = null;
+          this.studentName = null;
         } else {
           this.studentFound = true;
           this.studentId = students[0].id;
+          this.studentName = students[0].name;  // Guardar el nombre del estudiante
         }
       },
       error: () => {
@@ -55,6 +58,7 @@ export class AddStudentButtonComponent {
         this.errorMessage = 'Error al buscar el estudiante.';
         this.studentFound = false;
         this.studentId = null;
+        this.studentName = null;
       }
     });
   }

@@ -15,6 +15,7 @@ export class AddTeacherButtonComponent {
   teacherForm: FormGroup;
   teacherFound = false;
   teacherId: number | null = null;
+  teacherName: string | null = null; 
   showErrorModal = false;
   showSuccessModal = false;
   errorMessage = '';
@@ -45,9 +46,11 @@ export class AddTeacherButtonComponent {
           this.errorMessage = 'No existe el profesor.';
           this.teacherFound = false;
           this.teacherId = null;
+          this.teacherName = null;
         } else {
           this.teacherFound = true;
           this.teacherId = teachers[0].id;
+          this.teacherName = teachers[0].name;  // Guardar el nombre del profesor
         }
       },
       error: () => {
@@ -55,6 +58,7 @@ export class AddTeacherButtonComponent {
         this.errorMessage = 'Error al buscar el profesor.';
         this.teacherFound = false;
         this.teacherId = null;
+        this.teacherName = null;
       }
     });
   }
@@ -82,6 +86,7 @@ export class AddTeacherButtonComponent {
 
   closeSuccessModal() {
     this.showSuccessModal = false;
+    this.teacherName = null;
   }
 }
 

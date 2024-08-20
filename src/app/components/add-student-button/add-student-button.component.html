@@ -24,7 +24,7 @@
         <div class="bg-white p-4">
           <h3 class="text-lg leading-6 font-medium text-gray-900">{{ errorMessage }}</h3>
           <div class="mt-4 flex justify-center">
-            <button class="bg-red-500 text-white px-4 py-2 rounded " (click)="closeErrorModal()">Cerrar</button>
+            <button class="bg-red-500 text-white px-4 py-2 rounded" (click)="closeErrorModal()">Cerrar</button>
           </div>
         </div>
       </div>
@@ -40,14 +40,15 @@
       <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
       <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
         <div class="bg-white p-4">
-          <h3 class="text-lg leading-6 font-medium text-gray-900">Estudiante agregado exitosamente al proyecto.</h3>
+          <h3 class="text-lg leading-6 font-medium text-gray-900">Estudiante "{{ studentName }}" agregado exitosamente al proyecto.</h3>
           <div class="mt-4 flex justify-center">
-            <button class="bg-blue-500 text-white px-4 py-2 rounded " (click)="closeSuccessModal()">Cerrar</button>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded" (click)="closeSuccessModal()">Cerrar</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
   
