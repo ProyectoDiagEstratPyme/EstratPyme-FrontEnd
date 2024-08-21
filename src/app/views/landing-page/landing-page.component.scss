@@ -7,17 +7,12 @@
     padding: 3%;
     border-radius: 15px;
 }
-.letra{
-    color:#A5A6AD;
-}
 
-.objetivo {
-    color: #000066;
-    font-size: 70px;
+.letra {
+    color: #A5A6AD;
 }
 
 .kanit-bold {
-
     font-family: "Kanit", sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -30,12 +25,9 @@
     text-align: justify;
 }
 
-
 .img2 {
-
     width: 100%;
     height: auto;
-
 }
 
 p {
@@ -44,8 +36,8 @@ p {
     font-size: 18px;
 }
 
-.btn3 {
-    background-color: #000066;
+.btn {
+    background-color: #1C9AE1;
     padding: 10px 20px;
     border-radius: 5px;
     text-align: center;
@@ -55,57 +47,14 @@ p {
     transition: background-color 0.3s;
 }
 
-.btn2 {
-    background-color: #333399aa;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-align: center;
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
-    transition: background-color 0.3s;
-}
-
-.btn {
-    background-color: #fbd7cb;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-align: center;
-    display: inline-block;
-    cursor: pointer;
-    color: #000066;
-    transition: background-color 0.3s;
-}
 .btn:hover {
-    background-color: #FD673E;
-}
-
-.btn2:hover {
     background-color: #000066;
-}
-
-.btn3:hover {
-    background-color: #333399;
-}
-
-
-.title {
-    font-size: 50px;
-    font-family: 'Playfair Display', serif;
-    color: #ffffff;
-}
-
-.title2 {
-    font-size: 40px;
-    font-family: 'Playfair Display', serif;
-    color: #fbd7cb;
 }
 
 .text1 {
     font-family: 'Playfair Display', serif;
     text-align: center;
     font-size: 18px;
-
 }
 
 .image-wrapper {
@@ -119,4 +68,40 @@ p {
 
 .content-inner {
     color: white;
+}
+
+.poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.lato-regular {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.lato-regular-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.lato-light {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.content2 {
+    background: url('../../../../public/assets/images/imgLanding/quintaImg.png') no-repeat center center;
+    background-size: cover;
+}
+
+.content3 {
+    background-image: url('../../../../public/assets/images/imgLanding/sextoImg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }

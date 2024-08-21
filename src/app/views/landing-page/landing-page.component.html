@@ -1,66 +1,56 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<div class="nav">
+    <app-navbar></app-navbar>
+</div>
 
-
-
-<div class="h-screen w-full h-full grid place-items-center main-container">
-    
-        <div class="nav">
-            <app-navbar></app-navbar>
-        </div>
-        <div class="mx-auto">
-            <img  src="assets/images/imgLanding/tercerImg.png" alt="">
-        </div>  
-        <div class="flex flex-col gap-y-20"> 
-        <div class="image-wrapper justify-center w-5/6 mx-auto flex items-center ">         
-            <div class="content-inner flex flex-col justify-center items-center"> 
-                <div class="title">
-                    <h1 class="font-bold">¡Bienvenidos a EstramyPyme!</h1>
-                </div>
-                <div class="title2">
-                    <h2 class="font-bold">¿Qué es EstramyPyme?</h2>
-                </div>
-                <div class="text1">
-                    <p>Descubre una herramienta interactiva diseñada para evaluar y mejorar las estrategias empresariales de tu empresa. Inspirados en el libro "EstraMyPyme" de la Editorial EAFIT, hemos creado una plataforma web que te permitirá realizar pruebas diagnósticas detalladas y obtener resultados personalizados para potenciar el rendimiento y la competitividad de tu negocio.</p>
-                </div>
-                <div class="flex gap-x-20 mt-5">
-                    <div>
-                        <div class="btn">
-                            <p>Vamos a comenzar</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="btn2">
-                            <p>Vamos a comenzar</p>
-                        </div>
+<main class="bg-[#212529] pt-10">
+    <div class="flex justify-center items-center text-center pt-20">
+        <h1 class="text-gray-300 text-4xl sm:text-5xl md:text-6xl poppins-bold">¡Bienvenidos a EstramyPyme!</h1>
+    </div>
+    <div class="container mx-auto px-5">
+        <div class="flex flex-col lg:flex-row items-center justify-center">
+            <div class="w-full lg:w-2/3 xl:w-7/12 2xl:w-1/2 px-2 py-4 mx-auto text-center lg:text-left lg:ml-10 shadow-lg rounded-lg">
+                <h2 class="text-gray-400 font-bold text-3xl sm:text-4xl md:text-5xl">¿Qué es EstramyPyme?</h2>
+                <p class="text-gray-500 mt-5 text-lg sm:text-xl md:text-2xl lato-regular">Descubre una herramienta interactiva diseñada para evaluar y mejorar las estrategias empresariales de tu empresa. Inspirados en el libro EstraMyPyme de la Editorial EAFIT, hemos creado una plataforma web que te permitirá realizar pruebas diagnósticas detalladas y obtener resultados personalizados para potenciar el rendimiento y la competitividad de tu negocio.</p>
+                <div class="flex justify-center lg:justify-start mt-6">
+                    <div class="btn">
+                        <a routerLink="/register" class="custom-link text-white">Vamos a comenzar</a>
                     </div>
                 </div>
             </div>
-        </div>
-        
-       
-        <div class="flex w-full px-4 md:px-8 lg:px-16 mb-10">
-            <div class="flex gap-10">
-                <div class="flex-1 contenedorr">
-                    <div class="objetivo ">
-                        <h1 class="font-bold">Nuestro Objetivo</h1>
-                    </div>
-                    <div class="flex flex-col gap-y-20 letra">
-                        <p class="font-light text-justify">
-                            En EstramyPyme, nos proponemos ofrecerte una herramienta innovadora y accesible para evaluar y optimizar tus estrategias empresariales. Nuestra plataforma está diseñada tanto para individuos como para empresas de todos los tamaños y sectores, proporcionando análisis detallados y gráficos interactivos que facilitan la toma de decisiones informadas.
-                        </p>
-                        <div>
-                            <div class="btn3">
-                                <p>Vamos a comenzar</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex-1 contenedorr">
-                    <img class="img2" src="assets/images/imgLanding/segundaImg.png" alt="">
-                </div>
+            <div class="w-full xl:w-5/12 2xl:w-1/2 flex justify-center mx-auto mt-5 lg:mt-0">
+                <img src="assets/images/imgLanding/cuartaImg.png" alt="Imagen de Estramipyme" class="w-full md:w-3/4 lg:w-2/3 h-auto object-cover rounded-lg">
             </div>
         </div>
     </div>
+</main>
+
+<div class="py-10 text-center content2 shadow-lg bg-white rounded-lg p-6">
+    <h2 class="text-gray-200 font-bold text-3xl sm:text-4xl md:text-5xl">Nuestro Objetivo</h2>
+    <div class="flex flex-col gap-y-10 letra justify-center items-center">
+        <p class="text-gray-300 font-bold mt-2 text-lg sm:text-xl md:text-2xl lato-regular max-w-6xl mx-auto">En EstramyPyme, nos proponemos ofrecerte una herramienta innovadora y accesible para evaluar y optimizar tus estrategias empresariales. Nuestra plataforma está diseñada tanto para individuos como para empresas de todos los tamaños y sectores, proporcionando análisis detallados y gráficos interactivos que facilitan la toma de decisiones informadas.</p>
+        <div class="btn">
+            <a routerLink="/register" class="custom-link text-white">Vamos a comenzar</a>
+        </div>
+    </div>
 </div>
+
+<div class="flex flex-col lg:flex-row items-center content3">
+    <div class="flex-1 p-5 lg:text-left shadow-2xl rounded-lg relative bg-opacity-50 backdrop-blur">
+        <div class="text-center">
+            <h2 class="font-bold text-3xl sm:text-4xl md:text-5xl text-gray-700">Impulsa tu negocio con Estrategias Efectivas</h2>
+        </div>
+        <div class="text-center m-5">
+            <p class="mt-5 text-lg sm:text-xl md:text-2xl lato-regular tracking-widest leading-tight text-gray-600">Enfrenta los desafíos diarios con Estramipyme, podrás crear una estrategia que potencie tu negocio y te permita avanzar con confianza. Es el momento de transformar tu esfuerzo en resultados.</p>
+        </div>
+    </div>
+    <div class="flex-1 p-4 flex justify-center mt-5 lg:mt-0">
+        <img class="w-full h-auto max-h-128 lg:max-h-160 xl:max-h-192" src="assets/images/imgLanding/segundaImg.png" alt="Imagen de Estrategias Efectivas">
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-[#212529] py-5">
+    <div class="container mx-auto px-5 text-center text-white">
+        <p class="text-sm">&copy; 2024 Estramipyme. Todos los derechos reservados.</p>
+    </div>
+</footer>
