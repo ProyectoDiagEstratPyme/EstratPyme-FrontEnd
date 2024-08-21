@@ -22,11 +22,16 @@ export class RegisterComponent {
     typeUser: new FormControl('0', Validators.required),
     id: new FormControl('', Validators.required),
     sizeCompany: new FormControl('0', Validators.required),
-    sector: new FormControl('0', Validators.required)
+    sector: new FormControl('0', Validators.required),
+    sizeCompanyModal: new FormControl('0', Validators.required),
+    sectorModal: new FormControl('0', Validators.required),
+    typeUserModal: new FormControl('0', Validators.required)
   });
 
   errorMessage: string | null = null;
-  isModalOpen = false;
+  isTypeUserModalOpen = false;
+  isSizeCompanyModalOpen = false;
+  isSectorModalOpen = false;
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -80,15 +85,54 @@ export class RegisterComponent {
     }
   }
 
-  openModal() {
-    this.isModalOpen = true;
+  openTypeUserModal() {
+    this.registerForm.get('typeUserModal')?.setValue('0'); // Reiniciar valor
+    this.isTypeUserModalOpen = true;
   }
 
-  closeModal() {
-    this.isModalOpen = false;
+  closeTypeUserModal() {
+    this.isTypeUserModalOpen = false;
   }
 
-  confirmAction() {
-    this.closeModal();
+  confirmTypeUserAction() {
+    const selectedValue = this.registerForm.get('typeUserModal')?.value;
+    if (selectedValue) {
+      this.registerForm.get('typeUser')?.setValue(selectedValue);
+    }
+    this.closeTypeUserModal();
+  }
+
+  openSizeCompanyModal() {
+    this.registerForm.get('sizeCompanyModal')?.setValue('0'); // Reiniciar valor
+    this.isSizeCompanyModalOpen = true;
+  }
+
+  closeSizeCompanyModal() {
+    this.isSizeCompanyModalOpen = false;
+  }
+
+  confirmSizeCompanyAction() {
+    const selectedValue = this.registerForm.get('sizeCompanyModal')?.value;
+    if (selectedValue) {
+      this.registerForm.get('sizeCompany')?.setValue(selectedValue);
+    }
+    this.closeSizeCompanyModal();
+  }
+
+  openSectorModal() {
+    this.registerForm.get('sectorModal')?.setValue('0'); // Reiniciar valor
+    this.isSectorModalOpen = true;
+  }
+
+  closeSectorModal() {
+    this.isSectorModalOpen = false;
+  }
+
+  confirmSectorAction() {
+    const selectedValue = this.registerForm.get('sectorModal')?.value;
+    if (selectedValue) {
+      this.registerForm.get('sector')?.setValue(selectedValue);
+    }
+    this.closeSectorModal();
   }
 }
