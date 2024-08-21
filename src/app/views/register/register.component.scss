@@ -16,19 +16,19 @@
   }
 
   button {
-    background-color: black;
+    background-color: #212529;
     color: white;
     font-weight: bold; 
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     width: 100%; 
-    border: 2px solid black;
+    border: 2px solid #212529;
     transition: background-color 0.3s, color 0.3s;
   
     &:hover {
       background-color: white;
       color: black;
-      border: 2px solid black;
+      border: 2px solid #212529;
     }
   }
 

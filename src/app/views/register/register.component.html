@@ -1,41 +1,39 @@
-<div class="min-h-screen flex items-center justify-center">
-  <app-navbar class="navbar"></app-navbar>
+<div class="min-h-screen flex flex-col items-center justify-center">
+  <app-navbar class="navbar w-full"></app-navbar>
 
-  <div class="container mx-auto mt-7" style="padding-top: 60px;">
+  <div class="container mx-auto px-4 mt-5">
     <div class="flex justify-center items-center min-h-screen">
       <div class="w-full max-w-4xl">
         <div class="bg-white shadow-2xl rounded-lg overflow-hidden">
-          <div class="flex">
-            <div class="hidden md:block md:w-1/2">
+          <div class="flex flex-col lg:flex-row">
+            <div class="hidden lg:block lg:w-1/2">
               <img src="assets/images/imgRegister/primerImg.png" alt="register form" class="w-full h-full object-cover" />
             </div>
-            <div class="w-full md:w-1/2 flex items-center">
+            <div class="w-full lg:w-1/2 flex items-center">
               <div class="p-8 text-black w-full form-container">
                 <div class="main-container">
                   <div id="error-message" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert" style="display:none;">
                   </div>
                   <h1 class="font-bold pt-4 text-center text-xl">Regístrate a EstramyPyme!</h1>
 
-
-                  <form [formGroup]="registerForm" (ngSubmit)="register()" class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+                  <form [formGroup]="registerForm" (ngSubmit)="register()" class="grid grid-cols-1 lg:grid-cols-2 gap-4 p-4">
                     <div class="mb-2">
-                      <label for="name" class="block text-white">Nombre o Razón Social</label>
+                      <label for="name" class="block text-gray-700">Nombre o Razón Social</label>
                       <input id="name" type="text" formControlName="name"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" [ngClass]="{'is-invalid': registerForm.get('name')?.invalid && registerForm.get('name')?.touched, 'is-valid': registerForm.get('name')?.valid && registerForm.get('name')?.touched}" required>
                     </div>
                     <div class="mb-2">
-                      <label for="password" class="block text-white">Contraseña</label>
+                      <label for="password" class="block text-gray-700">Contraseña</label>
                       <input id="password" type="password" formControlName="password"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" [ngClass]="{'is-invalid': registerForm.get('password')?.invalid && registerForm.get('password')?.touched, 'is-valid': registerForm.get('password')?.valid && registerForm.get('password')?.touched}" required>
                     </div>
                     <div class="mb-2">
-                      <label for="email" class="block text-white">Correo Electrónico</label>
+                      <label for="email" class="block text-gray-700">Correo Electrónico</label>
                       <input id="email" type="email" formControlName="email"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" [ngClass]="{'is-invalid': registerForm.get('email')?.invalid && registerForm.get('email')?.touched, 'is-valid': registerForm.get('email')?.valid && registerForm.get('email')?.touched}" required>
                     </div>
-                    <!-- Other form fields -->
                     <div class="mb-2">
-                      <label for="typeUser" class="block text-white">Tipo de persona</label>
+                      <label for="typeUser" class="block text-gray-700">Tipo de persona</label>
                       <select id="typeUser" (change)="openTypeUserModal()" formControlName="typeUser" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
                         <option value="0">Seleccione</option>
                         <option value="1">Natural</option>
@@ -43,12 +41,12 @@
                       </select>
                     </div>
                     <div class="mb-2">
-                      <label for="id" class="block text-white">Identificación</label>
+                      <label for="id" class="block text-gray-700">Identificación</label>
                       <input id="id" type="number" formControlName="id"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" [ngClass]="{'is-invalid': registerForm.get('id')?.invalid && registerForm.get('id')?.touched, 'is-valid': registerForm.get('id')?.valid && registerForm.get('id')?.touched}" required>
                     </div>
                     <div class="mb-2">
-                      <label for="sizeCompany" class="block text-white">Tamaño de la empresa</label>
+                      <label for="sizeCompany" class="block text-gray-700">Tamaño de la empresa</label>
                       <select id="sizeCompany" (change)="openSizeCompanyModal()" formControlName="sizeCompany" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
                         <option value="0">Seleccione</option>
                         <option value="1">Pequeña</option>
@@ -56,8 +54,8 @@
                         <option value="3">Grande</option>
                       </select>
                     </div>
-                    <div class="mb-4 col-span-2">
-                      <label for="sector" class="block text-white">Sector al que pertenece la empresa</label>
+                    <div class="mb-4 col-span-1 lg:col-span-2">
+                      <label for="sector" class="block text-gray-700">Sector al que pertenece la empresa</label>
                       <select id="sector" (change)="openSectorModal()" formControlName="sector" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
                         <option value="0">Seleccione</option>
                         <option value="1">Sector Agrícola</option>
@@ -66,13 +64,13 @@
                         <option value="4">Sector Construcción</option>
                       </select>
                     </div>
-                    <div class="col-span-2">
+                    <div class="col-span-1 lg:col-span-2">
                       <button type="submit" class="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 rounded w-full">Registrar</button>
                     </div>
                   </form>
                   <div class="pb-5">
-                    <p class="text-center text-sm text-gray-600">¿No estás seguro de cómo clasificar tu empresa? <a routerLink="/help-user" class="custom-link">Necesito ayuda</a></p>
-                    <p class="text-center text-sm text-gray-600 mt-2">¿Ya tienes una cuenta? <a routerLink="/login" class="custom-link">Inicia sesión</a></p>
+                    <p class="text-center text-sm text-gray-600">¿No estás seguro de cómo clasificar tu empresa? <a href="/help-user" class="custom-link">Necesito ayuda</a></p>
+                    <p class="text-center text-sm text-gray-600 mt-2">¿Ya tienes una cuenta? <a href="/login" class="custom-link">Inicia sesión</a></p>
                   </div>
                 </div>
               </div>
@@ -84,100 +82,74 @@
   </div>
 </div>
 
-<!-- Modal de Selección del Tamaño de la Empresa -->
-<div id="sizeCompany-modal" [class.hidden]="!isSizeCompanyModalOpen" class="fixed inset-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
-  <div class="relative p-4 w-full max-w-md max-h-full">
-    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 p-6">
-      <div class="p-4 md:p-5 text-center">
-        <img src="assets/images/estramipyme-logo.png" alt="Logo" class="mx-auto mb-4 w-12 h-12 mt-8">
-        <h3 class="mb-5 text-lg font-normal text-white dark:text-white">Seleccione el tamaño de la empresa</h3>
-        <form [formGroup]="registerForm">
-          <div class="mb-2">
-            <select id="sizeCompanyModal" formControlName="sizeCompanyModal" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-              <option value="0">Seleccione</option>
-              <option value="1">Pequeña</option>
-              <option value="2">Mediana</option>
-              <option value="3">Grande</option>
-            </select>
-            <p *ngIf="registerForm.get('sizeCompanyModal')?.value === '1'" class="text-white mt-4">Empresas con un número limitado de empleados y recursos, enfocadas en mercados locales o regionales.</p>
-            <p *ngIf="registerForm.get('sizeCompanyModal')?.value === '2'" class="text-white mt-4">Empresas más grandes que las pequeñas, con una estructura organizativa más desarrollada y presencia en mercados más amplios.</p>
-            <p *ngIf="registerForm.get('sizeCompanyModal')?.value === '3'" class="text-white mt-4">Empresas con un gran número de empleados y recursos, con operaciones a gran escala y presencia global.</p>
+<!-- Modals -->
+<div *ngIf="isTypeUserModalOpen" class="fixed z-10 inset-0 overflow-y-auto">
+  <div class="flex items-center justify-center min-h-screen px-4">
+    <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+      <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+    </div>
+    <div class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
+      <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+        <div class="sm:flex sm:items-start">
+          <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">Confirmación</h3>
+            <div class="mt-2">
+              <p class="text-sm text-gray-500">¿Estás seguro de que deseas seleccionar este tipo de persona?</p>
+            </div>
           </div>
-        </form>
-        <div class="flex justify-center mt-4 mb-4">
-          <button (click)="confirmSizeCompanyAction()" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-            Sí, estoy seguro
-          </button>
-          <button (click)="closeSizeCompanyModal()" type="button" class="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">No, cancelar</button>
         </div>
+      </div>
+      <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+        <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 sm:ml-3 sm:w-auto sm:text-sm" (click)="confirmTypeUserAction()">Confirmar</button>
+        <button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 sm:mt-0 sm:w-auto sm:text-sm" (click)="closeTypeUserModal()">Cancelar</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Modal de Selección del Sector al que Pertenece la Empresa -->
-<div id="sector-modal" [class.hidden]="!isSectorModalOpen" class="fixed inset-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
-  <div class="relative p-4 w-full max-w-md max-h-full">
-    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 p-6">
-      <div class="p-4 md:p-5 text-center">
-        <img src="assets/images/estramipyme-logo.png" alt="Logo" class="mx-auto mb-4 w-12 h-12 mt-8">
-        <h3 class="mb-5 text-lg font-normal text-white dark:text-white">Seleccione el sector al que pertenece la empresa</h3>
-        <form [formGroup]="registerForm">
-          <div class="mb-2">
-            <select id="sectorModal" formControlName="sectorModal" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-              <option value="0">Seleccione</option>
-              <option value="1">Sector Agrícola</option>
-              <option value="2">Sector Industrial</option>
-              <option value="3">Sector Servicios</option>
-              <option value="4">Sector Construcción</option>
-            </select>
-            <p *ngIf="registerForm.get('sectorModal')?.value === '1'" class="text-white mt-4">Empresas involucradas en la extracción y producción de recursos naturales, como agricultura, minería y pesca.</p>
-            <p *ngIf="registerForm.get('sectorModal')?.value === '2'" class="text-white mt-4">Empresas dedicadas a la transformación de materias primas en productos manufacturados, como la industria manufacturera y la construcción.</p>
-            <p *ngIf="registerForm.get('sectorModal')?.value === '3'" class="text-white mt-4">Empresas que prestan servicios a individuos y otras empresas, incluyendo sectores como comercio, transporte, educación, y servicios financieros.</p>
-            <p *ngIf="registerForm.get('sectorModal')?.value === '4'" class="text-white mt-4">Empresas especializadas en la gestión y creación de conocimiento, como investigación y desarrollo, tecnología de la información y servicios de consultoría.</p>
+<div *ngIf="isSizeCompanyModalOpen" class="fixed z-10 inset-0 overflow-y-auto">
+  <div class="flex items-center justify-center min-h-screen px-4">
+    <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+      <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+    </div>
+    <div class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
+      <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+        <div class="sm:flex sm:items-start">
+          <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">Confirmación</h3>
+            <div class="mt-2">
+              <p class="text-sm text-gray-500">¿Estás seguro de que deseas seleccionar este tamaño de empresa?</p>
+            </div>
           </div>
-        </form>
-        <div class="flex justify-center mt-4">
-          <button (click)="confirmSectorAction()" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-            Sí, estoy seguro
-          </button>
-          <button (click)="closeSectorModal()" type="button" class="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">No, cancelar</button>
         </div>
+      </div>
+      <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+        <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 sm:ml-3 sm:w-auto sm:text-sm" (click)="confirmSizeCompanyAction()">Confirmar</button>
+        <button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 sm:mt-0 sm:w-auto sm:text-sm" (click)="closeSizeCompanyModal()">Cancelar</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Modal de Selección del Tipo de Persona -->
-<div id="typeUser-modal" [class.hidden]="!isTypeUserModalOpen" class="fixed inset-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
-  <div class="relative p-4 w-full max-w-md max-h-full">
-    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 p-6"> <!-- Added padding to the modal -->
-      <button type="button" (click)="closeTypeUserModal()" class="absolute top-2 right-2 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-xs w-6 h-6 inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white">
-        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-        </svg>
-        <span class="sr-only">Cerrar modal</span>
-      </button>
-      <div class="p-4 md:p-5 text-center">
-        <img src="assets/images/estramipyme-logo.png" alt="Logo" class="mx-auto mb-4 w-12 h-12 mt-8"> <!-- Added margin-top to separate from the close button -->
-        <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Seleccione el tipo de persona</h3>
-        <form [formGroup]="registerForm">
-          <div class="mb-2">
-            <select id="typeUserModal" formControlName="typeUserModal" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-              <option value="0">Seleccione</option>
-              <option value="1">Natural</option>
-              <option value="2">Jurídica</option>
-            </select>
-            <p *ngIf="registerForm.get('typeUserModal')?.value === '1'" class="text-gray-400">Empresas conformadas por individuos o familias, generalmente de pequeño tamaño y con estructuras organizativas simples.</p>
-            <p *ngIf="registerForm.get('typeUserModal')?.value === '2'" class="text-gray-400">Empresas constituidas como entidades legales separadas de sus propietarios, con una estructura organizativa más compleja y posibilidad de crecimiento.</p>
+<div *ngIf="isSectorModalOpen" class="fixed z-10 inset-0 overflow-y-auto">
+  <div class="flex items-center justify-center min-h-screen px-4">
+    <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+      <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+    </div>
+    <div class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
+      <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+        <div class="sm:flex sm:items-start">
+          <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">Confirmación</h3>
+            <div class="mt-2">
+              <p class="text-sm text-gray-500">¿Estás seguro de que deseas seleccionar este sector?</p>
+            </div>
           </div>
-        </form>
-        <div class="flex justify-center mt-4">
-          <button (click)="confirmTypeUserAction()" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-            Sí, estoy seguro
-          </button>
-          <button (click)="closeTypeUserModal()" type="button" class="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">No, cancelar</button>
         </div>
+      </div>
+      <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+        <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 sm:ml-3 sm:w-auto sm:text-sm" (click)="confirmSectorAction()">Confirmar</button>
+        <button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 sm:mt-0 sm:w-auto sm:text-sm" (click)="closeSectorModal()">Cancelar</button>
       </div>
     </div>
   </div>

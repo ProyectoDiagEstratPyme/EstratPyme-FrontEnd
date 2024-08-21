@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { RouterOutlet, ActivatedRoute } from '@angular/router';
 import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NavbarComponent } from "../../components/navbar/navbar.component";
 import { AuthService } from '../../services/auth.service';
@@ -13,16 +13,16 @@ import { Router } from '@angular/router';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
 
   registerForm = new FormGroup({
     name: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', Validators.required),
-    typeUser: new FormControl('0', Validators.required),
+    typeUser: new FormControl('0', Validators.required), // Tipo de empresa (natural o jurídica)
     id: new FormControl('', Validators.required),
-    sizeCompany: new FormControl('0', Validators.required),
-    sector: new FormControl('0', Validators.required),
+    sizeCompany: new FormControl('0', Validators.required), // Tamaño de la empresa (número de empleados)
+    sector: new FormControl('0', Validators.required), // Sector de la empresa
     sizeCompanyModal: new FormControl('0', Validators.required),
     sectorModal: new FormControl('0', Validators.required),
     typeUserModal: new FormControl('0', Validators.required)
@@ -33,7 +33,20 @@ export class RegisterComponent {
   isSizeCompanyModalOpen = false;
   isSectorModalOpen = false;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router, private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      if (params) {
+        // Asignar los valores de los parámetros a los selectores correspondientes
+        this.registerForm.patchValue({
+          typeUser: params['tipoEmpresa'] || '0', // Tipo de empresa (natural o jurídica)
+          sizeCompany: params['numeroEmpleados'] || '0', // Tamaño de la empresa (número de empleados)
+          sector: params['sectorEmpresa'] || '0' // Sector de la empresa
+        });
+      }
+    });
+  }
 
   register() {
     const nameControl = this.registerForm.get('name') as AbstractControl;

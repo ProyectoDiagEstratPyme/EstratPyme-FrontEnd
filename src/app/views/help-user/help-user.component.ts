@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, Router } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NavbarComponent } from "../../components/navbar/navbar.component";
 
@@ -9,69 +9,36 @@ import { NavbarComponent } from "../../components/navbar/navbar.component";
   standalone: true,
   imports: [RouterOutlet, ReactiveFormsModule, CommonModule, NavbarComponent],
   templateUrl: './help-user.component.html',
-  styleUrl: './help-user.component.scss'
+  styleUrls: ['./help-user.component.scss']
 })
 export class HelpUserComponent {
   helpForm = new FormGroup({
-    naturalezaNegocio: new FormControl(''),
-    legalizacion: new FormControl(''),
-    cantidadEmpleados: new FormControl(''),
-    ingresos: new FormControl(''),
-    sectorCompany: new FormControl(''),
+    tipoEmpresa: new FormControl('', Validators.required),
+    actividadNegocio: new FormControl('', Validators.required),
+    numeroEmpleados: new FormControl('', Validators.required),
+    ingresosAnuales: new FormControl('', Validators.required),
   });
 
- /*  valor = ''; // Corregido: Declarar la variable fuera de cualquier método
+  isModalOpen = false;
+  warningMessage: string | null = null;
 
-  constructor() {
-    this.initializeIndexedDB();
-  }
+  constructor(private router: Router) {}
 
-  help() {
-    const { naturalezaNegocio, legalizacion, cantidadEmpleados, ingresos, sectorCompany } = this.helpForm.value;
-    if (naturalezaNegocio == '1' && legalizacion == '1' && cantidadEmpleados == '1' && ingresos == '1' && sectorCompany == '1') {
-      this.valor = "Tu empresa es una microempresa";
-      this.saveToIndexedDB(this.valor); // Llamada a la función para guardar en IndexedDB
+  openConfirmationModal() {
+    if (this.helpForm.invalid) {
+      this.warningMessage = 'Todavía faltan campos por llenar. ¿Desea enviar el formulario así?';
+    } else {
+      this.warningMessage = null;
     }
+    this.isModalOpen = true;
   }
 
-  initializeIndexedDB() {
-    const request = window.indexedDB.open('estratPyme', 1);
-
-    request.onerror = (event) => {
-      console.error('Error al abrir IndexedDB', event);
-    };
-
-    request.onupgradeneeded = (event) => {
-      const db = event.target.result;
-      if (!db.objectStoreNames.contains('company')) {
-        db.createObjectStore('company', { keyPath: 'id', autoIncrement: true });
-      }
-    };
-
-    request.onsuccess = (event) => {
-      console.log('IndexedDB inicializado con éxito');
-    };
+  closeModal() {
+    this.isModalOpen = false;
   }
-   saveToIndexedDB(valor) {
-    const request = window.indexedDB.open('estratPyme', 1);
 
-    request.onsuccess = (event) => {
-      const db = event.target.result;
-      const transaction = db.transaction(['company'], 'readwrite');
-      const store = transaction.objectStore('company');
-      const addRequest = store.add({ valor: valor });
-
-      addRequest.onsuccess = () => {
-        console.log('Valor guardado en IndexedDB con éxito');
-      };
-
-      addRequest.onerror = (event) => {
-        console.error('Error al guardar en IndexedDB', event);
-      };
-    };
-
-    request.onerror = (event) => {
-      console.error('Error al abrir IndexedDB para guardar', event);
-    };
-  } */
-} 
+  confirmSubmission() {
+    const formData = this.helpForm.value;
+    this.router.navigate(['/register'], { queryParams: formData });
+  }
+}

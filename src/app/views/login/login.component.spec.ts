@@ -14,6 +14,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+registrarse() {
+throw new Error('Method not implemented.');
+}
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email, Validators.pattern(/.+@.+\..+/)]),
     password: new FormControl('', Validators.required)
