@@ -7,7 +7,7 @@ import { switchMap } from 'rxjs';
 })
 export class TestService {
 
-  private baseUrl='http://localhost:3000/tests';
+  private baseUrl='https://estramipyme-api.vercel.app/tests';
 
   constructor(private http: HttpClient){}
 

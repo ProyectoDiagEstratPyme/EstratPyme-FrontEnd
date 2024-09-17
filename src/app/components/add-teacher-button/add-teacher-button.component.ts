@@ -39,7 +39,7 @@ export class AddTeacherButtonComponent {
 
     const searchCriteria = id ? `id=${id}` : `email=${email}`;
 
-    this.http.get(`http://localhost:3000/teachers?${searchCriteria}`).subscribe({
+    this.http.get(`https://estramipyme-api.vercel.app/teachers?${searchCriteria}`).subscribe({
       next: (teachers: any) => {
         if (teachers.length === 0) {
           this.showErrorModal = true;
@@ -65,7 +65,7 @@ export class AddTeacherButtonComponent {
 
   addTeacherToProject() {
     if (this.teacherId !== null) {
-      this.http.patch(`http://localhost:3000/teachers/${this.teacherId}`, { profesorParteProyecto: true }).subscribe({
+      this.http.patch(`https://estramipyme-api.vercel.app/teachers/${this.teacherId}`, { profesorParteProyecto: true }).subscribe({
         next: () => {
           this.showSuccessModal = true;
           this.teacherFound = false;

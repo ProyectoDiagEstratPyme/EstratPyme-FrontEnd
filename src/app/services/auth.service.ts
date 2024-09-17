@@ -9,8 +9,8 @@ import { Admin } from '../models/admin';
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = 'http://localhost:3000/usuarios';
-  private baseUrlAdmin= "http://localhost:3000/admins"
+  private baseUrl = 'https://estramipyme-api.vercel.app/usuarios';
+  private baseUrlAdmin= "https://estramipyme-api.vercel.app/admins"
 
   isLoggedIn:boolean=false;
 
