@@ -21,12 +21,24 @@ El proyecto desarrolla una plataforma web para que individuos y empresas realice
 
 
 # Instalación y Uso
+Actualmente esta página se encuentra desplegada en: https://estramipyme-frontend.vercel.app
 
+Ten en cuenta que la naturaleza de este proyecto es en el fronted, por lo tanto solo se encuentran funcionando los métodos get al momento de hacer el llamado a las API.
+Esto debido a las limitaciones de vercel para desplegar un JSON server.
 
+Para la visualización del panel de empresa debes ingresar el siguiente usuario en el login:
+
+Correo: bcolqueran3@example.com
+Contraseña: wW9)E=t8=)XIcMe)
+
+Para la visualización del panel de administración debes ingresar el siguiente usuario en el login:
+
+Correo: profesora1@gmail.com
+Contraseña: admin123
 
 
 
 ## Contacto
 
-Si tienes preguntas, comentarios o sugerencias sobre este proyecto, no dudes en ponerte en contacto Con nosotros los desarrolladores.
+Si tienes preguntas, comentarios o sugerencias sobre este proyecto, no dudes en ponerte en contacto con nosotros los desarrolladores.
 
